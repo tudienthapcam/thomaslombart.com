@@ -24,10 +24,22 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              backgroundColor: "transparent",
+              quality: 75,
+              withWebp: true,
+            },
+          },
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
+              backgroundColor: "transparent",
+              quality: 75,
               withWebp: true,
             },
           },

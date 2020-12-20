@@ -8,6 +8,9 @@ module.exports = {
     },
   },
   theme: {
+    fontFamily: {
+      body: ["TT Norms"],
+    },
     scale: {
       103: "1.03",
       105: "1.05",

@@ -4,7 +4,7 @@
 
 /* purgecss start ignore */
 html {
-  font-family: "TT Norms";
+  @apply font-body;
 }
 
 .gatsby-code-title {

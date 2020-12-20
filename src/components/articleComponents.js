@@ -1,5 +1,6 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
+import { useCopyToClipboard } from "react-use";
 
 import codeTheme from "./codeTheme";
 
@@ -7,15 +8,30 @@ import { getAumgentedTokens } from "./utils";
 
 const CodeBlock = ({
   children: {
-    props: { children, className },
+    props: { children: code, className },
   },
 }) => {
+  const [isCopied, setIsCopied] = React.useState(false);
+  const [, copyToClipboard] = useCopyToClipboard();
   const matches = className && className.match(/language-(?<lang>.*)/);
+
+  React.useEffect(() => {
+    if (isCopied) {
+      copyToClipboard(code);
+      const timer = setTimeout(() => {
+        setIsCopied(false);
+      }, 2500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isCopied, code, copyToClipboard]);
+
+  const copy = () => setIsCopied(true);
 
   return (
     <Highlight
       {...defaultProps}
-      code={children.trim()}
+      code={code.trim()}
       language={
         matches && matches.groups && matches.groups.lang
           ? matches.groups.lang
@@ -28,9 +44,15 @@ const CodeBlock = ({
 
         return (
           <pre
-            className={`rounded-lg py-6 lg:-mx-8 my-2 overflow-x-auto border border-gray-800 ${className} shadow-lg`}
+            className={`relative rounded-lg py-6 lg:-mx-10 my-2 overflow-x-auto border border-gray-800 ${className} shadow-lg`}
             style={style}
           >
+            <button
+              onClick={copy}
+              className="absolute hidden w-20 px-1 font-bold text-gray-900 transition bg-gray-100 rounded shadow md:block font-body hover:bg-gray-300 right-2 top-2"
+            >
+              {isCopied ? "Copied!" : "Copy"}
+            </button>
             {augmentedTokens.map(({ isHighlight, line }, i) => {
               const lineProps = getLineProps({
                 line,
