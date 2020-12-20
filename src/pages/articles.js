@@ -24,11 +24,11 @@ const BlogIndex = ({
         <SEO title="All articles" description={description} />
         <Header />
         <div className="rounded-lg shadow ">
-          <label className="block text-2xl font-bold text-gray-100 sm:text-3xl">
+          <label className="block text-xl font-bold text-gray-100 sm:text-2xl">
             Search an article
             <input
               type="text"
-              className="block w-full px-6 py-3 mt-3 text-gray-100 placeholder-gray-400 bg-gray-800 border-gray-700 rounded shadow appearance-none focus:ring focus:ring-gray-800 "
+              className="block w-full px-4 py-3 mt-3 text-gray-100 placeholder-gray-400 bg-gray-800 border-gray-700 rounded shadow appearance-none sm:px-6 focus:ring focus:ring-gray-800 "
               placeholder="tools, javascript"
               onChange={(e) => setSearch(e.target.value)}
             />

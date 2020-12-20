@@ -43,45 +43,46 @@ const CodeBlock = ({
         const augmentedTokens = getAumgentedTokens(tokens);
 
         return (
-          <pre
-            className={`relative rounded-lg py-6 lg:-mx-10 my-2 overflow-x-auto border border-gray-800 ${className} shadow-lg`}
-            style={style}
-          >
-            <button
-              onClick={copy}
-              className="absolute hidden w-20 px-1 font-bold text-gray-900 transition bg-gray-100 rounded shadow md:block font-body hover:bg-gray-300 right-2 top-2"
+          <div className="relative lg:-mx-10">
+            <pre
+              className={`rounded-lg py-6 my-2 overflow-auto border border-gray-800 shadow-lg`}
+              style={style}
             >
-              {isCopied ? "Copied!" : "Copy"}
-            </button>
-            {augmentedTokens.map(({ isHighlight, line }, i) => {
-              const lineProps = getLineProps({
-                line,
-                key: i,
-                className: "px-4",
-              });
+              <button
+                onClick={copy}
+                className="absolute hidden px-2 font-semibold text-gray-200 transition bg-gray-800 rounded shadow md:block font-body hover:bg-gray-700 right-2 top-2"
+              >
+                {isCopied ? "Copied!" : "Copy"}
+              </button>
+              {/* TODO: figure out why "float: left" works for highlighting the comments when scrolling*/}
+              <div className="float-left">
+                {augmentedTokens.map(({ isHighlight, line }, i) => {
+                  const lineProps = getLineProps({
+                    line,
+                    key: i,
+                    className: "px-6",
+                  });
 
-              const getTokens = () =>
-                line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
-                ));
+                  const getTokens = () =>
+                    line.map((token, key) => (
+                      <span {...getTokenProps({ token, key })} />
+                    ));
 
-              return isHighlight ? (
-                <div
-                  key={i}
-                  style={{ backgroundColor: "#7497a633" }}
-                  className="py-1"
-                >
-                  <div {...lineProps} className="px-6">
-                    {getTokens()}
-                  </div>
-                </div>
-              ) : (
-                <div {...lineProps} className="px-6">
-                  {getTokens()}
-                </div>
-              );
-            })}
-          </pre>
+                  return isHighlight ? (
+                    <div
+                      key={i}
+                      style={{ backgroundColor: "#7497a633" }}
+                      className="block py-1"
+                    >
+                      <div {...lineProps}>{getTokens()}</div>
+                    </div>
+                  ) : (
+                    <div {...lineProps}>{getTokens()}</div>
+                  );
+                })}
+              </div>
+            </pre>
+          </div>
         );
       }}
     </Highlight>

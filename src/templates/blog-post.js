@@ -64,14 +64,14 @@ const BlogPostTemplate = ({
           <>
             <hr className="mb-4" />
             <Link to={next.fields.slug}>
-              <div className="p-4 my-2 bg-gray-800 border border-none rounded-lg shadow-lg">
+              <div className="p-6 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
                 <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
                   <span role="img" aria-label="Eyes" className="mr-1 text-xl">
                     👀
                   </span>
                   This post may also interest you
                 </span>
-                <p className="mt-1 text-2xl font-bold leading-tight text-gray-200 underline">
+                <p className="mt-1 text-2xl font-bold leading-tight text-gray-200">
                   {next.frontmatter.title}
                 </p>
               </div>

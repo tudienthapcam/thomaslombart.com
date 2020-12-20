@@ -2,7 +2,7 @@ import React from "react";
 
 const Note = ({ children }) => {
   return (
-    <div className="px-3 py-1 my-4 text-yellow-100 bg-yellow-800 border-l-4 border-yellow-500">
+    <div className="px-3 py-2 text-blue-900 bg-blue-300 border-l-4 border-blue-600  sm:px-4 sm:py-3">
       {children}
     </div>
   );

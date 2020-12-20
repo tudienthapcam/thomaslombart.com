@@ -29,6 +29,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: "transparent",
+              maxWidth: 750,
               quality: 75,
               withWebp: true,
             },
@@ -39,6 +40,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: "transparent",
+              maxWidth: 750,
               quality: 75,
               withWebp: true,
             },
