@@ -1,0 +1,116 @@
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. 
+You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. 
+Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com
+*/
+@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=445aacf5-a66f-4af9-9465-bd4a01641483&fontids=5537254,5537262,5537286,5537296,5537306,5537316,5830376,5830384,5830394,5830402");
+
+@font-face {
+  font-family: "TT Norms"; /* NORMAL */
+  src: url("Fonts/5830384/9c5f5660-91ed-42ef-aace-11ddb6b88af7.woff2")
+      format("woff2"),
+    url("Fonts/5830384/18563b17-7180-4a0f-bedc-944f52e012eb.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* NORMAL ITALIC */
+  src: url("Fonts/5830376/9f9bf984-1cb5-417d-b642-9929a57c4353.woff2")
+      format("woff2"),
+    url("Fonts/5830376/4cb35970-a798-4efe-9982-264467bef1bc.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* MEDIUM */
+  src: url("Fonts/5537254/e82f6cee-9013-4a8a-88b7-f588b977558a.woff2")
+      format("woff2"),
+    url("Fonts/5537254/dd46c47a-49a0-4615-998d-2943c528e5d0.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* MEDIUM ITALIC */
+  src: url("Fonts/5537262/8de61113-64a7-4714-b4da-c8ae636177c1.woff2")
+      format("woff2"),
+    url("Fonts/5537262/731caf42-f319-4ddb-8337-03686f4c78a2.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* DEMIBOLD ITALIC */
+  src: url("Fonts/5830394/9356623e-68fc-48a1-b141-daf7787e39b5.woff2")
+      format("woff2"),
+    url("Fonts/5830394/1b54f73f-25f2-4255-9029-266cf9d3e3ad.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* DEMIBOLD */
+  src: url("Fonts/5830402/4110ae96-f9b6-4f88-a43d-3ec99c92a447.woff2")
+      format("woff2"),
+    url("Fonts/5830402/b179882b-b5fe-45ac-9ccc-8e32d04afaa5.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* BOLD */
+  src: url("Fonts/5537286/508cd261-b649-4ad1-9ea4-03804b9b1c23.woff2")
+      format("woff2"),
+    url("Fonts/5537286/39e09c35-50f6-40d9-8e82-aa8ff11019ce.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* BOLD ITALIC */
+  src: url("Fonts/5537296/cab88ea2-7cf3-4045-a945-dfc8c6da3050.woff2")
+      format("woff2"),
+    url("Fonts/5537296/fedb4bc0-4c1d-4c19-a613-63751c3a34de.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* EXTRABOLD */
+  src: url("Fonts/5537306/ea4bf838-1eb6-45a3-93e9-729f6cd68a85.woff2")
+      format("woff2"),
+    url("Fonts/5537306/36cbf4bb-bb1a-418b-82ac-a70c08671890.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Norms"; /* EXTRABOLD ITALIC */
+  src: url("Fonts/5537316/ab133ceb-0ccb-4230-b033-6f05d256ea44.woff2")
+      format("woff2"),
+    url("Fonts/5537316/8a0017e0-1ca1-4d19-9b58-60ffc6723dc8.woff")
+      format("woff");
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* purgecss start ignore */
+html {
+  font-family: "TT Norms";
+}
+
+.gatsby-code-title {
+  @apply text-gray-400 text-sm;
+}
+/* purgecss end ignore */
