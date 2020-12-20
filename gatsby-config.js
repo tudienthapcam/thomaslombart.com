@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Thomas Lombart`,
-    description: `Front-end engineer specializing in JavaScript technologies. Writes on web development and productivity. Open-source contributor and mentor.`,
+    description: `I'm Thomas Lombart, a front-end engineer currently working at Back Market. I write articles on modern web development, contribute to open-source and mentor aspiring developers.`,
     keywords: [`developer`, `javascript`, `react`, `vue`, `mentor`],
     siteUrl: `https://thomlom.dev`,
   },
@@ -28,7 +28,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              withWebp: true,
             },
           },
           {

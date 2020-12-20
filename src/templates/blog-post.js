@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
+import Header from "../components/header";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -14,7 +15,6 @@ const BlogPostTemplate = ({
       siteMetadata: { siteUrl },
     },
   },
-  location,
 }) => {
   const { body } = post;
   const {
@@ -31,22 +31,21 @@ const BlogPostTemplate = ({
   const tagsString = tags.join(", ");
 
   return (
-    <Layout location={location} inBlog>
+    <Layout>
       <SEO
         title={seoTitle || title}
         description={description || post.excerpt}
         coverURL={siteUrl + cover.publicURL}
       />
-      <article>
-        <header>
-          <h1 className="mb-4 text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
-            {title}
-          </h1>
-          <div className="flex justify-between mt-2 text-sm font-semibold text-gray-300 uppercase">
-            <span>{tagsString}</span>
-            <span>{date}</span>
-          </div>
-        </header>
+      <div className="px-4 py-6 mx-auto max-w-prose md:px-0">
+        <Header />
+        <h1 className="mt-6 mb-4 text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
+          {title}
+        </h1>
+        <div className="flex justify-between text-sm font-semibold text-gray-300 uppercase">
+          <span>{tagsString}</span>
+          <span>{date}</span>
+        </div>
         {cover && (
           <>
             <Img
@@ -58,9 +57,9 @@ const BlogPostTemplate = ({
             ) : null}
           </>
         )}
-        <section className="mt-6">
+        <main className="mt-6">
           <MDXRenderer>{body}</MDXRenderer>
-        </section>
+        </main>
         {nextLink ? (
           <>
             <hr className="mb-4" />
@@ -79,7 +78,7 @@ const BlogPostTemplate = ({
             </Link>
           </>
         ) : null}
-      </article>
+      </div>
     </Layout>
   );
 };

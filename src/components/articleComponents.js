@@ -28,7 +28,7 @@ const CodeBlock = ({
 
         return (
           <pre
-            className={`rounded-lg py-4 my-2 overflow-x-auto border border-gray-800 ${className}`}
+            className={`rounded-lg py-6 lg:-mx-8 my-2 overflow-x-auto border border-gray-800 ${className} shadow-lg`}
             style={style}
           >
             {augmentedTokens.map(({ isHighlight, line }, i) => {
@@ -44,11 +44,17 @@ const CodeBlock = ({
                 ));
 
               return isHighlight ? (
-                <div key={i} style={{ backgroundColor: "#7497a633" }}>
-                  <div {...lineProps}>{getTokens()}</div>
+                <div
+                  key={i}
+                  style={{ backgroundColor: "#7497a633" }}
+                  className="py-1"
+                >
+                  <div {...lineProps} className="px-6">
+                    {getTokens()}
+                  </div>
                 </div>
               ) : (
-                <div {...lineProps} className="px-4">
+                <div {...lineProps} className="px-6">
                   {getTokens()}
                 </div>
               );
@@ -73,7 +79,7 @@ export default {
   ol: (props) => (
     <ol className={`${textClassNames} list-decimal ml-6`} {...props} />
   ),
-  li: (props) => <li className="my-2 pl-1" {...props} />,
+  li: (props) => <li className="pl-1 my-2" {...props} />,
   h1: (props) => (
     // eslint-disable-next-line
     <h1
@@ -102,20 +108,20 @@ export default {
   a: (props) => (
     // eslint-disable-next-line
     <a
-      className="font-bold underline text-gray-300 hover:text-gray-200"
+      className="font-bold text-gray-300 underline hover:text-gray-200"
       {...props}
     />
   ),
   blockquote: (props) => (
     <blockquote
-      className="pl-4 border-l-4 border-gray-400 italic break-word"
+      className="pl-4 italic border-l-4 border-gray-400 break-word"
       {...props}
     />
   ),
   inlineCode: (props) => (
     <code
       {...props}
-      className="bg-gray-900 text-gray-300 border-gray-800 border rounded-lg"
+      className="text-base text-gray-300 bg-gray-800 border border-gray-800 rounded-lg"
       style={{ padding: "1.75px 3.5px" }}
     />
   ),

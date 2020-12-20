@@ -8,6 +8,6 @@ html {
 }
 
 .gatsby-code-title {
-  @apply text-gray-400 text-sm;
+  @apply text-sm text-gray-400;
 }
 /* purgecss end ignore */
