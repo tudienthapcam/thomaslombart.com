@@ -1,9 +1,11 @@
+const siteUrl = `https://thomlom.dev`;
+
 module.exports = {
   siteMetadata: {
     title: `Thomas Lombart`,
     description: `Front-end developer. Writes on web development, mentor aspiring developers and contribute to open-source.`,
     keywords: [`developer`, `javascript`, `react`, `vue`, `mentor`],
-    siteUrl: `https://thomlom.dev`,
+    siteUrl,
   },
   plugins: [
     {
@@ -122,6 +124,12 @@ module.exports = {
         theme_color: `#3525e6`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl,
       },
     },
     `gatsby-plugin-react-helmet`,
