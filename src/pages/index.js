@@ -9,6 +9,7 @@ import ArticlePreview from "../components/articlePreview";
 import SEO from "../components/seo";
 
 import useBoop from "../hooks/useBoop";
+import useTrackGoal from "../hooks/useTrackGoal";
 
 import MentorBanner from "../components/mentorBanner";
 
@@ -24,6 +25,7 @@ const InlineLink = ({ to, children }) => (
 );
 
 const ExternalIcon = ({ to, label, children }) => {
+  const track = useTrackGoal();
   const [style, trigger] = useBoop({
     scale: 1.15,
   });
@@ -34,6 +36,7 @@ const ExternalIcon = ({ to, label, children }) => {
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={trigger}
+      onClick={() => track("Social icon", { label })}
       style={style}
     >
       <span className="sr-only">{label}</span>
@@ -59,6 +62,8 @@ const Home = ({
     allMdx,
   },
 }) => {
+  const track = useTrackGoal();
+
   const articles = allMdx.edges.slice(0, 4);
 
   return (
@@ -121,6 +126,7 @@ const Home = ({
             <Link
               to="/articles"
               className="inline-block px-3 py-1 font-bold transition bg-gray-100 rounded-lg shadow-lg sm:text-lg hover:bg-gray-300"
+              onClick={() => track("See all articles")}
             >
               See all articles
             </Link>

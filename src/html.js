@@ -11,13 +11,18 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {props.headComponents}
         <script
           async
           defer
           data-domain="thomlom.dev"
           src="https://plausible.io/js/plausible.js"
         ></script>
-        {props.headComponents}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
+          }}
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

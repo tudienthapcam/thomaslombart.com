@@ -4,6 +4,8 @@ import { useCopyToClipboard } from "react-use";
 
 import codeTheme from "./codeTheme";
 
+import useTrackGoal from "../hooks/useTrackGoal";
+
 import { getAumgentedTokens } from "./utils";
 
 const CodeBlock = ({
@@ -13,18 +15,25 @@ const CodeBlock = ({
 }) => {
   const [isCopied, setIsCopied] = React.useState(false);
   const [, copyToClipboard] = useCopyToClipboard();
+  const track = useTrackGoal();
+
   const matches = className && className.match(/language-(?<lang>.*)/);
+  const language =
+    matches && matches.groups && matches.groups.lang ? matches.groups.lang : "";
 
   React.useEffect(() => {
     if (isCopied) {
       copyToClipboard(code);
+
+      track("Copy code", { language });
+
       const timer = setTimeout(() => {
         setIsCopied(false);
-      }, 2500);
+      }, 3500);
 
       return () => clearTimeout(timer);
     }
-  }, [isCopied, code, copyToClipboard]);
+  }, [isCopied, code, copyToClipboard, language, track]);
 
   const copy = () => setIsCopied(true);
 
@@ -32,14 +41,10 @@ const CodeBlock = ({
     <Highlight
       {...defaultProps}
       code={code.trim()}
-      language={
-        matches && matches.groups && matches.groups.lang
-          ? matches.groups.lang
-          : ""
-      }
+      language={language}
       theme={codeTheme}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => {
+      {({ style, tokens, getLineProps, getTokenProps }) => {
         const augmentedTokens = getAumgentedTokens(tokens);
 
         return (
