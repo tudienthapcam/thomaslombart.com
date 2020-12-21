@@ -31,7 +31,7 @@ const Comments = ({ description }) => {
           </p>
         </>
       )}
-      <div ref={utterancesRef}></div>
+      <div ref={utterancesRef} id="comments"></div>
     </>
   );
 };
