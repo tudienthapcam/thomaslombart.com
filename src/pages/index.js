@@ -70,11 +70,11 @@ const Home = ({
           <div className="my-12 space-y-6">
             <h2 className="flex flex-col text-2xl font-extrabold tracking-wide text-gray-100 uppercase sm:text-4xl">
               <span>Hey. I'm Thomas,</span>
-              <span>a front-end engineer.</span>
+              <span>a front-end developer.</span>
             </h2>
             <h3 className="text-xl font-medium text-gray-400 sm:text-2xl sm:max-w-2xl">
-              I write articles on modern web development, contribute to
-              open-source and mentor aspiring developers.
+              I write articles on web development, mentor aspiring developers
+              and contribute to open-source.
             </h3>
             <div className="flex space-x-6">
               <ExternalIcon to="https://github.com/thomlom" label="GitHub">
@@ -143,8 +143,8 @@ const Home = ({
           <p className="flex flex-col flex-1 mt-4 space-y-3 text-lg leading-relaxed text-gray-200 sm:mt-0 sm:ml-10">
             <span>
               My name is Thomas Lombart. I live in France.{" "}
-              <TextBold>I learned web development by myself</TextBold> though I
-              have a degree in computer science.
+              <TextBold>I learned front-end development by myself</TextBold>{" "}
+              though I have a degree in computer science.
             </span>
             <span>
               I currently work remotely for{" "}
@@ -162,11 +162,13 @@ const Home = ({
             </span>
             <span>
               Outside of my full-time job, I like to write in-depth articles on
-              modern web development. I also contribute to open-source whenever
-              I have some time on my hands like an{" "}
-              <InlineLink to="https://github.com/testing-library/eslint-plugin-testing-library">
-                ESLint plugin for Testing Library.
-              </InlineLink>
+              web development and contribute to open-source whenever I have some
+              time on my hands.
+            </span>
+            <span>
+              Here's a list of word to get a better glimpse of who I am:
+              curious, simple, kind, remote work, travel, minimalist, nature,
+              hiking, piano, movies scores, privacy.
             </span>
           </p>
         </section>

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Thomas Lombart`,
-    description: `I'm Thomas Lombart, a front-end engineer currently working at Back Market. I write articles on modern web development, contribute to open-source and mentor aspiring developers.`,
+    description: `Front-end developer. Writes on web development, mentor aspiring developers and contribute to open-source.`,
     keywords: [`developer`, `javascript`, `react`, `vue`, `mentor`],
     siteUrl: `https://thomlom.dev`,
   },

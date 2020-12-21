@@ -55,7 +55,7 @@ const CodeBlock = ({
                 {isCopied ? "Copied!" : "Copy"}
               </button>
               {/* TODO: figure out why "float: left" works for highlighting the comments when scrolling*/}
-              <div className="float-left">
+              <div className="float-left min-w-full">
                 {augmentedTokens.map(({ isHighlight, line }, i) => {
                   const lineProps = getLineProps({
                     line,
