@@ -139,10 +139,10 @@ const BlogPostTemplate = ({
             All articles
           </Link>
         </div>
-        <h1 className="mt-6 mb-4 text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
+        <h1 className="mt-6 text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
           {title}
         </h1>
-        <div className="flex justify-between text-sm font-semibold text-gray-300 uppercase">
+        <div className="flex justify-between mt-4 text-sm font-semibold text-gray-300 uppercase">
           <span>{tagsString}</span>
           <span>{date}</span>
         </div>
@@ -162,12 +162,12 @@ const BlogPostTemplate = ({
         </main>
         {nextLink ? (
           <>
-            <hr className="mb-4" />
+            <hr />
             <Link
               to={next.fields.slug}
               onClick={() => track("Next article", { to: next.fields.slug })}
             >
-              <div className="p-6 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
+              <div className="p-6 mt-4 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
                 <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
                   <span role="img" aria-label="Eyes" className="mr-1 text-xl">
                     👀

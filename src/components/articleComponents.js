@@ -96,8 +96,7 @@ const CodeBlock = ({
 
 const textClassNames =
   "my-4 sm:my-5 text-gray-300 text-lg leading-relaxed font-body";
-const titleClassNames =
-  "mb-2 sm:mb-3 text-gray-200 font-bold leading-tight font-display";
+const titleClassNames = "text-gray-200 font-bold leading-tight font-display";
 
 export default {
   p: (props) => <p className={textClassNames} {...props} />,

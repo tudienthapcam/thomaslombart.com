@@ -25,7 +25,7 @@ const Comments = ({ description }) => {
       {hasLoadedUtterances && (
         <>
           <hr className="my-4" />
-          <p className="mb-1 font-semibold leading-relaxed text-gray-200">
+          <p className="font-semibold leading-relaxed text-gray-200">
             {description ||
               "Questions? Thoughts? Leave your comments below. 👇"}
           </p>

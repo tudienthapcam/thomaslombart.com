@@ -121,7 +121,7 @@ const Home = ({
       </div>
       <main className="max-w-3xl px-4 mx-auto space-y-12 md:px-0">
         <section>
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between">
             <SectionHeading>Latest articles</SectionHeading>
             <Link
               to="/articles"
@@ -131,7 +131,7 @@ const Home = ({
               See all articles
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 mt-6 sm:grid-cols-2">
             {articles.map(({ node }) => (
               <ArticlePreview key={node.fields.slug} node={node} />
             ))}
