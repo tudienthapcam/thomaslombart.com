@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import Image from "gatsby-image";
 import { animated } from "react-spring";
 
 import Header from "../components/header";
@@ -138,15 +137,9 @@ const Home = ({
           </div>
         </section>
         <MentorBanner />
-        <section className="flex flex-col p-5 bg-gray-800 rounded-lg shadow-xl sm:flex-row sm:p-8">
-          <div className="flex flex-col">
-            <SectionHeading>About me</SectionHeading>
-            <Image
-              fixed={photo.childImageSharp.fixed}
-              className="p-2 mt-4 border-2 border-gray-200 rounded-full"
-            />
-          </div>
-          <p className="flex flex-col flex-1 mt-4 space-y-3 text-lg leading-relaxed text-gray-200 sm:mt-0 sm:ml-10">
+        <section className="flex flex-col p-5 bg-gray-800 rounded-lg shadow-xl sm:p-8">
+          <SectionHeading>About me</SectionHeading>
+          <p className="flex flex-col mt-4 space-y-4 text-lg text-gray-200">
             <span>
               My name is Thomas Lombart. I live in France.{" "}
               <TextBold>I learned front-end development by myself</TextBold>{" "}
@@ -191,14 +184,6 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         description
-      }
-    }
-    photo: file(absolutePath: { regex: "/photo.jpeg/" }) {
-      publicURL
-      childImageSharp {
-        fixed(width: 150) {
-          ...GatsbyImageSharpFixed
-        }
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
