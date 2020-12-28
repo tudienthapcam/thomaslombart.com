@@ -10,8 +10,6 @@ import SEO from "../components/seo";
 import useBoop from "../hooks/useBoop";
 import useTrackGoal from "../hooks/useTrackGoal";
 
-import MentorBanner from "../components/mentorBanner";
-
 const InlineLink = ({ to, children }) => (
   <a
     href={to}
@@ -77,8 +75,8 @@ const Home = ({
               <span>a front-end developer.</span>
             </h2>
             <h3 className="text-xl font-medium text-gray-400 sm:text-2xl sm:max-w-2xl">
-              I write articles on web development, mentor aspiring developers
-              and contribute to open-source.
+              I build JavaScript apps, write articles on web development, and
+              contribute to open-source.
             </h3>
             <div className="flex space-x-6">
               <ExternalIcon to="https://github.com/thomlom" label="GitHub">
@@ -136,7 +134,6 @@ const Home = ({
             ))}
           </div>
         </section>
-        <MentorBanner />
         <section className="flex flex-col p-5 bg-gray-800 rounded-lg shadow-xl sm:p-8">
           <SectionHeading>About me</SectionHeading>
           <p className="flex flex-col mt-4 space-y-4 text-lg text-gray-200">

@@ -4,9 +4,8 @@ import { MDXProvider } from "@mdx-js/react";
 import articleComponents from "./articleComponents";
 import Note from "./note";
 import Comments from "./comments";
-import MentorBanner from "./mentorBanner";
 
-const shortcodes = { Note, Comments, MentorBanner };
+const shortcodes = { Note, Comments };
 
 const Layout = ({ children }) => {
   return (

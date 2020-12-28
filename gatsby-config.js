@@ -3,8 +3,8 @@ const siteUrl = `https://thomlom.dev`;
 module.exports = {
   siteMetadata: {
     title: `Thomas Lombart`,
-    description: `Front-end developer. Writes on web development, mentor aspiring developers and contribute to open-source.`,
-    keywords: [`developer`, `javascript`, `react`, `vue`, `mentor`],
+    description: `Front-end developer. Builds JavaScript apps, writes on web development, and contributes to open-source.`,
+    keywords: [`front-end`, `developer`, `javascript`, `react`, `vue`],
     siteUrl,
   },
   plugins: [
