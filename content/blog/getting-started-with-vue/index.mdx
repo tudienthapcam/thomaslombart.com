@@ -5,6 +5,7 @@ date: "2020-03-16"
 cover: "./cover.jpg"
 next: /how-to-create-an-app-with-vue/
 tags: [vue]
+canonical: https://medium.com/swlh/getting-started-with-vue-a65ded9a773c
 ---
 
 Vue.js is a progressive framework created in 2014 by Evan You that allows you to build user interfaces. If you come from a React background, learning Vue will be easy, the concepts stay the same. But if you're used to pure JavaScript or jQuery, well, things are going to be way different here!
@@ -27,7 +28,7 @@ new Vue({
   data: {
     name: "James Bond",
   },
-})
+});
 ```
 
 Wow. What happened here? What's `data`? `{{ name }}`? `el`? These are legit questions and I'll answer them right away.
@@ -56,7 +57,7 @@ new Vue({
   data: {
     placeholder: "James Bond",
   },
-})
+});
 ```
 
 ## Conditional rendering: v-if
@@ -76,7 +77,7 @@ new Vue({
   data: {
     admin: false,
   },
-})
+});
 ```
 
 On the example above, you have: `You can see this sentence because you’re an admin`. If you were to use the app, you would see this sentence only because the condition passed to `v-if` is `true` (`admin`).
@@ -108,10 +109,10 @@ new Vue({
   },
   methods: {
     changeMessage() {
-      this.message = "Hey everyone!"
+      this.message = "Hey everyone!";
     },
   },
-})
+});
 ```
 
 The new thing you discover here is the use of `this`. Here, `this` refers directly to the Vue instance. Thus, you can easily access your data properties from your methods using `this.PROPERTY_NAME`. Here, we accessed and changed the message by assigning a new value to `this.message` in `changeMessage` method.
@@ -136,7 +137,7 @@ new Vue({
   data: {
     message: "Hello World",
   },
-})
+});
 ```
 
 Here's what happens behind the scenes when you use `v-model`:
@@ -185,7 +186,7 @@ new Vue({
   data: {
     things: ["Piano", "Car", "House"],
   },
-})
+});
 ```
 
 You can also provide a second argument to `v-for`:
@@ -204,7 +205,7 @@ So far, you saw Vue directives and reactivity only. But as mentioned previously,
 ```javascript
 Vue.component("my-component", {
   template: "<div>My component</div>",
-})
+});
 ```
 
 You can create a new component with `Vue.component`. The first parameter of that method is the component name (`my-component` in our case) while the second is an object that defines your component. One property of this object is `template` which corresponds to your component’s HTML code. But there's also `data` and `methods`, in fact, nearly every property of a Vue instance since these components are Vue instances too!
@@ -236,11 +237,11 @@ Vue.component("person", {
   </div>
   `,
   props: ["name", "age", "country"],
-})
+});
 
 new Vue({
   el: "#app",
-})
+});
 ```
 
 By passing a `props` property to our component, we passed data from the parent component to the child component.
@@ -275,19 +276,19 @@ Vue.component("child", {
   `,
   methods: {
     send() {
-      this.$emit("send", "Hello!")
+      this.$emit("send", "Hello!");
     },
   },
-})
+});
 
 new Vue({
   el: "#app",
   methods: {
     alertMessage(message) {
-      alert("My child sent me a message, it says: " + message)
+      alert("My child sent me a message, it says: " + message);
     },
   },
-})
+});
 ```
 
 Here is what happens when you click on the button whose value is `Send a message`:
@@ -324,7 +325,7 @@ Vue.component("todo-item", {
   </li>
   `,
   props: ["todo"],
-})
+});
 
 new Vue({
   el: "#app",
@@ -337,14 +338,14 @@ new Vue({
   },
   methods: {
     addTodo(event) {
-      this.todos.push({ name: this.nextTodo, done: false })
-      this.nextTodo = ""
+      this.todos.push({ name: this.nextTodo, done: false });
+      this.nextTodo = "";
     },
     toggle(todo) {
-      todo.done = !todo.done
+      todo.done = !todo.done;
     },
   },
-})
+});
 ```
 
 Here it is! You know have a basic app built with Vue. It's just the beginning but trust me, Vue and its ecosystem has much more to offer: [computed properties and watchers](https://vuejs.org/v2/guide/computed.html), [lifecycle hooks](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks), [slots](https://vuejs.org/v2/guide/components-slots.html), [generating a project with Vue CLI](https://cli.vuejs.org/), [Routing with Vue Router](https://router.vuejs.org/) or [centralized store with Vuex](https://vuex.vuejs.org/).

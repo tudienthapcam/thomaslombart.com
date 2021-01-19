@@ -6,6 +6,7 @@ date: "2020-03-30"
 cover: "./cover.jpg"
 tags: [javascript]
 next: "/what-you-should-know-about-js-arrays/"
+canonical: https://thomlom.medium.com/object-and-array-destructuring-in-javascript-83cc109dfebb
 ---
 
 When ES2015 (also known as ES6) got released, powerful new features saw the day like the **destructuring assignment syntax.** In short, it allows us to unpack values from arrays or properties from objects quickly and straightforwardly.
@@ -16,12 +17,12 @@ Let's say you have a `user` object with different properties like the `name`, th
 
 ```javascript
 // The old way: a bit verbose
-const name = user.name
-const age = user.age
-const email = user.email
+const name = user.name;
+const age = user.age;
+const email = user.email;
 
 // Using destructuring
-const { name, age, email } = user
+const { name, age, email } = user;
 ```
 
 Short and clear: that's the power of destructuring.
@@ -34,7 +35,7 @@ const {
   name,
   email,
   address: { city, country },
-} = user
+} = user;
 ```
 
 But what if you would like to assign the `city` and `country` variables while keeping the whole `address` object? That's still possible:
@@ -44,21 +45,21 @@ But what if you would like to assign the `city` and `country` variables while ke
 const {
   address,
   address: { city, country },
-} = user
+} = user;
 ```
 
 Sometimes when you retrieve data from an API, the variable names can be quite different. Let's imagine that the `user` object has an `user_id` property, and you want to rename it just `id`. It's useful in these cases to **rename variables** while destructuring using:
 
 ```javascript
 // Destructure user_id and rename it to id
-const { user_id: id } = user
+const { user_id: id } = user;
 ```
 
 The power of destructuring doesn't stop here. You can assign **default values** to properties in case they're not defined. For example, if your user were to have a favorite `theme` (`light` or `dark`) property, you could default it to light mode:
 
 ```javascript
 // If `theme` isn't defined, use the light mode by default
-const { name, theme = "light" } = user
+const { name, theme = "light" } = user;
 ```
 
 Note that everything said above also works for **function arguments**. For example, you could imagine a `displayAddress` function taking a `user` object argument:
@@ -67,7 +68,7 @@ Note that everything said above also works for **function arguments**. For examp
 // Destructure the user object and set the country to France by default
 function displayAddress({ name, address: { city, country = "France" } }) {
   // Note the use of template literals, another ES2015 feature
-  return `${name} lives in ${city}, ${country}`
+  return `${name} lives in ${city}, ${country}`;
 }
 ```
 
@@ -81,14 +82,14 @@ const User = ({ name, age, email }) => (
     </p>
     <p>{email}</p>
   </div>
-)
+);
 ```
 
 Note that it's also possible to destructure some properties of an object and still save the rest of the properties using the **rest parameter**:
 
 ```javascript
 // Assign the name and the email of the user and store the other properties in userInfos
-const { name, email, ...userInfos } = user
+const { name, email, ...userInfos } = user;
 ```
 
 It can also be handy in React if you need some props and need to pass down the other props.
@@ -97,7 +98,7 @@ Here's an example applied to routing in React:
 ```jsx
 const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest }) => {
   // Get the user's authentication status
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth();
 
   return (
     <Route
@@ -108,8 +109,8 @@ const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest }) => {
         isAuthenticated ? <Component {...props} /> : <Redirect to="/signin" />
       }
     />
-  )
-}
+  );
+};
 
 // Can be used that way:
 // <PrivateRoute path="/create" component={CreatePost} />
@@ -121,7 +122,7 @@ Wait, wait, wait. The next one is even cooler. You can make use of **dynamic** d
 const users = [
   { id: "afb4d", name: "Mike", age: 27 },
   { id: "fea4i", name: "Emma", age: 38 },
-]
+];
 
 const normalizedUsers = users.reduce((usersById, user) => {
   return {
@@ -130,8 +131,8 @@ const normalizedUsers = users.reduce((usersById, user) => {
     [user.id]: user,
     // ... and return the whole normalized users object
     ...usersById,
-  }
-}, {})
+  };
+}, {});
 
 /* 
 normalizedUsers is now
@@ -146,20 +147,20 @@ Destructuring also works for **arrays**. Let's say you retrieve a list of users 
 
 ```js
 // Retrieve the first three most active users
-const [first, second, third] = mostActiveUsers
+const [first, second, third] = mostActiveUsers;
 ```
 
 What if you'd like to get only the fourth user from this list? Well, it's also possible to **skip items**:
 
 ```js
 // Skip the first three most active users
-const [, , , fourth] = mostActiveUsers
+const [, , , fourth] = mostActiveUsers;
 ```
 
 You could also get the first three most active users and still store the other users with the **rest parameter**:
 
 ```js
-const [first, second, third, ...otherUsers] = mostActiveUsers
+const [first, second, third, ...otherUsers] = mostActiveUsers;
 ```
 
 Let's recap. You saw how to destructure objects (with nested objects), rename variables, assign default values, how destructuring applies to function arguments (and thus to components in React), dynamic destructuring, destructuring arrays, skipping array items and also how to use the rest parameter with both objects and arrays.

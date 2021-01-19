@@ -64,6 +64,7 @@ const BlogPostTemplate = ({
 
   const { body } = post;
   const {
+    canonical = "",
     cover,
     coverCredit,
     title,
@@ -84,6 +85,7 @@ const BlogPostTemplate = ({
         title={seoTitle || title}
         description={description || post.excerpt}
         coverURL={siteUrl + cover.publicURL}
+        canonical={canonical}
       />
       <div className="px-4 py-6 mx-auto max-w-prose md:px-0">
         <div
@@ -200,6 +202,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       body
       frontmatter {
+        canonical
         title
         seoTitle
         description

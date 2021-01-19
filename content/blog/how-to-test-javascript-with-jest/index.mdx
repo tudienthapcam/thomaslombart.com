@@ -5,6 +5,7 @@ date: "2019-09-18"
 cover: "./cover.jpeg"
 next: "/beginner-guide-testing-react-apps/"
 tags: [javascript, test]
+canonical: https://medium.com/swlh/how-to-test-javascript-with-jest-768fd592abe7
 ---
 
 Testing is an important skill every developer should have. Still, some developers are reluctant to test. We’ve all met at some point someone who thinks tests are useless or that it takes too much effort to write them. While it's possible to have that feeling when starting to write tests, once you learn to properly test your apps, you'll never look back again. Why? Because when well-written, **tests allow you to ship robust apps with confidence.**
@@ -83,13 +84,13 @@ Jest provides functions to structure your tests:
 ```javascript
 describe("My first test suite", () => {
   it("adds two numbers", () => {
-    expect(add(2, 2)).toBe(4)
-  })
+    expect(add(2, 2)).toBe(4);
+  });
 
   it("substracts two numbers", () => {
-    expect(substract(2, 2)).toBe(0)
-  })
-})
+    expect(substract(2, 2)).toBe(0);
+  });
+});
 ```
 
 ## Matchers
@@ -97,7 +98,7 @@ describe("My first test suite", () => {
 When you write a test, you usually need to make assertions on your code. For example you would expect an error to appear on the screen if a user gives the wrong password on a login screen. More generally, to make an assertion, you need an **input** and an **expected output**. Jest allows us to do that easily by providing **matchers** to test our values:
 
 ```javascript
-expect(input).matcher(output)
+expect(input).matcher(output);
 ```
 
 Here are the most common one:
@@ -105,71 +106,71 @@ Here are the most common one:
 - `toBe`: compares [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) values (boolean, number, string) or the references of objects and arrays (aka **referential equality**)
 
 ```javascript
-expect(1 + 1).toBe(2)
+expect(1 + 1).toBe(2);
 
-const firstName = "Thomas"
-const lastName = "Lombart"
-expect(`${firstName} ${lastName}`).toBe("Thomas Lombart")
+const firstName = "Thomas";
+const lastName = "Lombart";
+expect(`${firstName} ${lastName}`).toBe("Thomas Lombart");
 
-const testsAreEssential = true
-expect(testsAreEssential).toBe(true)
+const testsAreEssential = true;
+expect(testsAreEssential).toBe(true);
 ```
 
 - `toEqual`: compares recursively all properties of arrays or objects (aka **deep equality**).
 
 ```javascript
-const fruits = ["banana", "kiwi", "strawberry"]
-const sameFruits = ["banana", "kiwi", "strawberry"]
-expect(fruits).toEqual(sameFruits)
+const fruits = ["banana", "kiwi", "strawberry"];
+const sameFruits = ["banana", "kiwi", "strawberry"];
+expect(fruits).toEqual(sameFruits);
 // Oops error! They don't have the same reference
-expect(fruits).toBe(sameFruits)
+expect(fruits).toBe(sameFruits);
 
 const event = {
   title: "My super event",
   description: "Join me in this event!",
-}
+};
 
 expect({ ...event, city: "London" }).toEqual({
   title: "My super event",
   description: "Join me in this event!",
   city: "London",
-})
+});
 ```
 
 - `toBeTruthy` (`toBeFalsy`): tells if the value is `true` (`false`).
 
 ```javascript
-expect(null).toBeFalsy()
-expect(undefined).toBeFalsy()
-expect(false).toBeFalsy()
+expect(null).toBeFalsy();
+expect(undefined).toBeFalsy();
+expect(false).toBeFalsy();
 
-expect("Hello world").toBeTruthy()
-expect({ foo: "bar" }).toBeTruthy()
+expect("Hello world").toBeTruthy();
+expect({ foo: "bar" }).toBeTruthy();
 ```
 
 - `not`: has to be placed in front of a matcher and returns the opposite of the matcher's result.
 
 ```javascript
-expect(null).not.toBeTruthy()
+expect(null).not.toBeTruthy();
 // same as expect(null).toBeFalsy()
 
-expect([1]).not.toEqual([2])
+expect([1]).not.toEqual([2]);
 ```
 
 - `toContain`: checks if the array contains the element in parameter
 
 ```javascript
-expect(["Apple", "Banana", "Strawberry"]).toContain("Apple")
+expect(["Apple", "Banana", "Strawberry"]).toContain("Apple");
 ```
 
 - `toThrow`: checks if a function throws an error
 
 ```javascript
 function connect() {
-  throw new ConnectionError()
+  throw new ConnectionError();
 }
 
-expect(connect).toThrow(ConnectionError)
+expect(connect).toThrow(ConnectionError);
 ```
 
 They are not the only matchers, far from there. You can also discover in the [Jest docs](https://jestjs.io/docs/en/expect#methods) `toMatch`, `toBeGreaterThan`, `toBeUndefined`, `toHaveProperty` and much more!
@@ -265,44 +266,44 @@ But why would you need mocks in your tests? Because in real-world apps, you **de
 You can easily create mocks with the following function:
 
 ```javascript
-jest.fn()
+jest.fn();
 ```
 
 It doesn't look like so but this function is really powerful. It holds a `mock` property which makes it possible for us to keep track of how many times the functions have been called, with which arguments, what were the returned values, etc.
 
 ```javascript
-const foo = jest.fn()
-foo()
-foo("bar")
-console.log("foo", foo) // foo ƒ (){return e.apply(this,arguments)}
-console.log("foo mock property", foo.mock) // Object {calls: Array[2], instances: Array[2], invocationCallOrder: Array[2], results: Array[2]}
-console.log("foo calls", foo.mock.calls) // [Array[0], Array[1]]
+const foo = jest.fn();
+foo();
+foo("bar");
+console.log("foo", foo); // foo ƒ (){return e.apply(this,arguments)}
+console.log("foo mock property", foo.mock); // Object {calls: Array[2], instances: Array[2], invocationCallOrder: Array[2], results: Array[2]}
+console.log("foo calls", foo.mock.calls); // [Array[0], Array[1]]
 ```
 
 In this example, you can see that because `foo` have been called twice, `calls` has two items which represent the arguments passed in both function calls. Thus, we can make assertions on what were passed to the function:
 
 ```javascript
-const foo = jest.fn()
-foo("bar")
+const foo = jest.fn();
+foo("bar");
 
-expect(foo.mock.calls[0][0]).toBe("bar")
+expect(foo.mock.calls[0][0]).toBe("bar");
 ```
 
 Writing such an assertion is a little bit tedious. Luckily for us, Jest provides useful matchers when it comes to make mock assertions such as `toHaveBeenCalled`, `toHaveBeenCalledWith`, `toHaveBeenCalledTimes` and [much more](https://jestjs.io/docs/en/expect#tohavebeencalled):
 
 ```javascript
-const hello = jest.fn()
-hello("world")
-expect(hello).toHaveBeenCalledWith("world")
+const hello = jest.fn();
+hello("world");
+expect(hello).toHaveBeenCalledWith("world");
 
-const foo = jest.fn()
-foo("bar")
-foo("hello")
-expect(foo).toHaveBeenCalledTimes(2)
-expect(foo).toHaveBeenNthCalledWith(1, "bar")
-expect(foo).toHaveBeenNthCalledWith(2, "hello")
+const foo = jest.fn();
+foo("bar");
+foo("hello");
+expect(foo).toHaveBeenCalledTimes(2);
+expect(foo).toHaveBeenNthCalledWith(1, "bar");
+expect(foo).toHaveBeenNthCalledWith(2, "hello");
 // OR
-expect(foo).toHaveBeenLastCalledWith("hello")
+expect(foo).toHaveBeenLastCalledWith("hello");
 ```
 
 Let's take a real world example: a multi-step form. On each step, you have form inputs and also two buttons: _previous_ and _next_. Clicking on previous or next triggers a `saveStepData(nextOrPreviousFn)` function that, well, saves your data and executes the `nextOrPreviousFn` callback function which redirects you to the previous or next step.
@@ -312,33 +313,33 @@ Let'say you want to test the `saveStepData` function. As said above, you don't n
 ```javascript
 function saveStepData(nextOrPreviousFn) {
   // Saving data...
-  nextOrPreviousFn()
+  nextOrPreviousFn();
 }
 
-const nextOrPreviousMock = jest.fn()
-saveStepData(nextOrPreviousMock)
-expect(nextOrPreviousMock).toHaveBeenCalled()
+const nextOrPreviousMock = jest.fn();
+saveStepData(nextOrPreviousMock);
+expect(nextOrPreviousMock).toHaveBeenCalled();
 ```
 
 So far, we know how to create mocks and if they have been called. But what if we need to change the implementation of a function or modify the returned value to make one of our test deterministic? We can do so with the following function:
 
 ```javascript
-jest.fn().mockImplementation(implementation)
+jest.fn().mockImplementation(implementation);
 // Or with the shorthand
-jest.fn(implementation)
+jest.fn(implementation);
 ```
 
 Let's try it right away:
 
 ```javascript
-const foo = jest.fn().mockImplementation(() => "bar")
-const bar = foo()
+const foo = jest.fn().mockImplementation(() => "bar");
+const bar = foo();
 
-expect(foo.mock.results[0].value).toBe("bar")
+expect(foo.mock.results[0].value).toBe("bar");
 // or
-expect(foo).toHaveReturnedWith("bar")
+expect(foo).toHaveReturnedWith("bar");
 // or
-expect(bar).toBe("bar")
+expect(bar).toBe("bar");
 ```
 
 In this example, you can see we were able to mock the returned value of the `foo` function. Thus, the variable `bar` holds the `"bar"` string.
@@ -354,10 +355,10 @@ Using it is quite simple. Just give it the path of the module you want to mock a
 For instance, let's take the case of [axios](https://github.com/axios/axios), one of the most popular HTTP clients. Indeed, you don't want to perform actual network requests in your tests because they could get very slow. Let's mock `axios` then:
 
 ```javascript
-import axiosMock from "axios"
+import axiosMock from "axios";
 
-jest.mock("axios")
-console.log(axiosMock)
+jest.mock("axios");
+console.log(axiosMock);
 ```
 
 **Note**: I named the module `axiosMock` and not `axios` for readability reasons. I want to make it clear it's a mock and not the real module. The more readable, the better!
@@ -365,27 +366,27 @@ console.log(axiosMock)
 With `jest.mock` the different `axios` functions such as `get`, `post`, etc are mocked now. Thus, we have full control over what `axios` sends us back:
 
 ```javascript
-import axiosMock from "axios"
+import axiosMock from "axios";
 
 async function getUsers() {
   try {
     // this would typically be axios instead of axiosMock in your app
-    const response = await axiosMock.get("/users")
-    return response.data.users
+    const response = await axiosMock.get("/users");
+    return response.data.users;
   } catch (e) {
-    throw new Error("Oops. Something wrong happened")
+    throw new Error("Oops. Something wrong happened");
   }
 }
 
-jest.mock("axios")
+jest.mock("axios");
 
-const fakeUsers = ["John", "Emma", "Tom"]
-axiosMock.get.mockResolvedValue({ data: { users: fakeUsers } })
+const fakeUsers = ["John", "Emma", "Tom"];
+axiosMock.get.mockResolvedValue({ data: { users: fakeUsers } });
 
 test("gets the users", async () => {
-  const users = await getUsers()
-  expect(users).toEqual(fakeUsers)
-})
+  const users = await getUsers();
+  expect(users).toEqual(fakeUsers);
+});
 ```
 
 Another great feature of Jest is shared mocks. Indeed, if you were to reuse the axios mock implementation above, you could just create a `__mocks__` folder alongside the `node_modules` folder with a `axios.js` file in it:
@@ -393,9 +394,9 @@ Another great feature of Jest is shared mocks. Indeed, if you were to reuse the 
 ```javascript
 module.exports = {
   get: () => {
-    return Promise.resolve({ data: { users: ["John", "Emma", "Tom"] } })
+    return Promise.resolve({ data: { users: ["John", "Emma", "Tom"] } });
   },
-}
+};
 ```
 
 And then in the test:
