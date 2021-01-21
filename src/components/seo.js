@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ description, lang, meta, title, coverURL, canonical }) => {
+const SEO = ({ description, lang, meta, title, coverURL }) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(
@@ -28,9 +28,6 @@ const SEO = ({ description, lang, meta, title, coverURL, canonical }) => {
       htmlAttributes={{
         lang,
       }}
-      {...(canonical
-        ? { link: [{ rel: "canonical", href: canonical }] }
-        : null)}
       title={pageTitle}
       meta={[
         {
