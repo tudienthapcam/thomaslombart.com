@@ -1,5 +1,5 @@
 ---
-title: The Complete Beginner's Guide to Testing React Apps (Updated for 2020)
+title: The Complete Beginner's Guide to Testing React Apps
 seoTitle: How to test React apps with React Testing Library
 description: Testing apps can be painful, but it doesn't have to be that way. Learn in this post how you can make the most of React Testing Library to test React apps.
 date: "2019-10-09"
@@ -7,9 +7,9 @@ cover: "./cover.jpg"
 tags: [react, test]
 ---
 
-**Updated on 28 Aug. 2020**
+**Updated on 28 August 2020**
 
-Building web applications is not an easy task, as of today. To do so, you're probably using something like React, Vue, or Angular. Your app is faster, the code is both more maintainable and readable. But that's not enough. The more your codebase grows, the more complex and buggy it is. So if you care about that, **learn to write tests**. That's what we'll do today for React apps.
+Building web applications is not an easy task as of today. To do so, you're probably using something like React, Vue, or Angular. Your app is faster, the code is both more maintainable and readable. But that's not enough. The more your codebase grows, the more complex and buggy it is. So if you care about that, **learn to write tests**. That's what we'll do today for React apps.
 
 Luckily for you, there are already testing solutions for React, especially one: [react-testing-library](https://github.com/testing-library/react-testing-library) made by [Kent C. Dodds](https://kentcdodds.com/). So, let's discover it, shall we?
 
@@ -84,9 +84,9 @@ describe("<Counter />", () => {
 })
 ```
 
-**Note**: Don't worry if you don't fully understand the test files, we'll see all of this afterward 😉
+**Note**: Don't worry if you don't fully understand the test files. We'll see all of this afterward 😉
 
-Can you guess which test file is the best one and why? If you're not used to tests, you may think that both are fine. In fact, the two tests make sure that the counter is incremented and decremented. However, the first one is testing implementation details and it has two risks:
+Can you guess which test file is the best one and why? If you're not used to tests, you may think that both are fine. In fact, the two tests make sure that the counter is incremented and decremented. However, the first one is testing implementation details, and it has two risks:
 
 - **false-positive**: the test passes even if the code is broken.
 - **false-negative**: the test is broken even if the code is right.
@@ -177,7 +177,7 @@ describe("<Counter />", () => {
 
 To be honest, I'm not even sure if this is the right way to test it with Enzyme when it comes to hooks. In fact, we can't even make assumptions on the displayed count because of the mocked setter.
 
-However, the test without implementation details works as expected in all cases! So, if we had something to retain so far, it would be to **avoid testing implementation details**.
+However, the test without implementation details works as expected in all cases! If we had something to retain so far, it would be to **avoid testing implementation details**.
 
 **Note**: I'm not saying Enzyme is bad. I'm just saying testing implementation details will make tests harder to maintain and unreliable. In this article, we are going to use React Testing Library because it encourages testing best practices.
 
@@ -266,7 +266,7 @@ Basically, all this function does is that it [renders your component](https://gi
 
 #### Queries and `screen`
 
-Once our component is rendered correctly, we can get the different elements of the DOM using [screen](https://testing-library.com/docs/dom-testing-library/api-queries#screen) queries.
+Once our component is rendered correctly, we can get the DOM elements using [screen](https://testing-library.com/docs/dom-testing-library/api-queries#screen) queries.
 
 But what is `screen`? As said above, the component is rendered in `document.body`. Since it's common to query it, Testing Library exports an object with every query pre-bound to `document.body`. Note that we can also destructure [queries from the `render` result](https://testing-library.com/docs/react-testing-library/api#queries-1) but trust me, it's more convenient to use `screen`.
 
@@ -281,10 +281,10 @@ Here are some queries examples taken from [the docs](https://testing-library.com
 
 There are many variants to a particular query:
 
-- `getBy`: returns the first matching node for a query, throw an error if no elements match, or find more than one match.
-- `getAllBy`: returns an array of all matching nodes for a query, and throw an error if no elements match.
-- `queryBy`: returns the first matching node for a query, and return null if no elements match. This is useful for asserting an element that is not present.
-- `queryAllBy`: returns an array of all matching nodes for a query, and return an empty array (`[]`) if no elements match.
+- `getBy`: returns the first matching node for a query, throws an error if no elements match, or finds more than one match.
+- `getAllBy`: returns an array of all matching nodes for a query and throws an error if no elements match.
+- `queryBy`: returns the first matching node for a query and returns null if no elements match. This is useful for asserting an element that is not present.
+- `queryAllBy`: returns an array of all matching nodes for a query and returns an empty array (`[]`) if no elements match.
 - `findBy`: return a **promise**, which resolves when an element is found which matches the given query.
 - `findAllBy`: return a **promise**, which resolves to an array of elements when any elements are found which match the given query.
 
@@ -319,7 +319,7 @@ Now that everything is set up, we can act. For that, we use `fireEvent` from [DO
 fireEvent((node: HTMLElement), (event: Event));
 ```
 
-Simply put, this function takes a DOM node (that you can query with the queries seen above!) and fires DOM events such as `click`, `focus`, `change`, etc. There are many other events you can dispatch that you can find [by reading DOM Testing Library source code](https://github.com/testing-library/dom-testing-library/blob/dbbea6ee514399d0b37690ce5c56bb21f5ae2cb3/src/events.js#L1).
+Simply put, this function takes a DOM node (that you can query with the queries seen above!) and fires DOM events such as `click`, `focus`, `change`, etc. You can dispatch many other events that you can find [by reading DOM Testing Library source code](https://github.com/testing-library/dom-testing-library/blob/dbbea6ee514399d0b37690ce5c56bb21f5ae2cb3/src/events.js#L1).
 
 Our example is relatively simple as we just want to click a button, so we simply do:
 
@@ -347,7 +347,7 @@ Let's go deeper into this part by testing a more complex example. The app we're 
 - Add a new to-do
 - Mark a to-do as completed or active
 - Remove a to-do
-- Filter the to-dos: all, active and done to-dos
+- Filter the to-dos: all, active, and done to-dos
 
 Yes, I know, you may be sick of to-do apps in every tutorial, but hey, they're great examples!
 
@@ -380,7 +380,7 @@ function Todos({ todos: originalTodos }) {
           return !todo.done
         }
 
-        return todo.done
+        return to-do.done
       }),
     [todos, activeFilter]
   )
@@ -482,11 +482,11 @@ In this code, we:
 
 1. Query the input by its placeholder.
 2. Declare the to-do we're going to add
-3. Assert there were no to-dos using `getByText` (if `No to-dos!` was not in the app, `getByText` would throw an error)
+3. Assert no to-dos were using `getByText` (if `No to-dos!` was not in the app, `getByText` would throw an error)
 4. Add the to-do in the input
 5. Press the enter key.
 
-One thing that may surprises you is the second argument we pass to `fireEvent`. Maybe you would expect it to be a single string instead of an object with a `target` property.
+One thing that may surprise you is the second argument we pass to `fireEvent`. Maybe you would expect it to be a single string instead of an object with a `target` property.
 
 Well, under the hood, `fireEvent` dispatches an event to mimic what happens in a real app (it makes use of the [dispatchEvent](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/dispatchEvent) method). Thus, we need to dispatch the event as it would happen in our app, including setting the `target` property. The same logic goes for the `keyDown` event and the `key` property.
 
@@ -812,9 +812,9 @@ function waitFor<T>(
 ): Promise<T>;
 ```
 
-Simply put, `waitFor` takes a callback which contains expectations and waits for a specific time until these expectations pass.
+Simply put, `waitFor` takes a callback that contains expectations and waits for a specific time until these expectations pass.
 
-By default this time is at most `1000ms` at an interval of `50ms` (the first function call is fired immediately). This callback is also run every time a child is added or removed in your component's `container` using [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
+By default, this time is at most `1000ms` at an interval of `50ms` (the first function call is fired immediately). This callback is also run every time a child is added or removed in your component's `container` using [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
 
 We're going to make use of that function and put our initial assertions in it. The test now becomes:
 
@@ -847,7 +847,7 @@ If you're using CRA, maybe you encountered the following error:
 TypeError: MutationObserver is not a constructor
 ```
 
-That's normal. [DOM Testing Library v7](https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0) removed a shim of `MutationObserver` as it's now widely supported. However, CRA, as the time of writing, still uses an older version of Jest (24 or before) which itself uses a JSDOM environment where `MutationObserver` doesn't exist.
+That's normal. [DOM Testing Library v7](https://github.com/testing-library/dom-testing-library/releases/tag/v7.0.0) removed a shim of `MutationObserver` as it's now widely supported. However, at the time of writing, CRA still uses an older version of Jest (24 or before), which uses a JSDOM environment where `MutationObserver` doesn't exist.
 
 Two steps to fix it. First, install `jest-environment-jsdom-sixteen` as a dev dependency. Then, update your `test` script in your `package.json` file:
 
@@ -888,12 +888,12 @@ describe("Posts", () => {
 
 We know for sure that the API successfully returned the full post after the `await` statement, so we don't have to put async stuff after.
 
-And remember, `findByText` is asynchronous! If you find yourself forgetting the `await` statement a little bit too much, I encourage you to install the following plugin: [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library), it contains [a rule](https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-query.md) that prevent you to do so! 😉
+And remember, `findByText` is asynchronous! If you forget the `await` statement a little bit too much, I encourage you to install the following plugin: [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library). It contains [a rule](https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/await-async-query.md) that prevent you from doing so! 😉
 
 ---
 
 Pheeeew! That part was not easy.
 
-Hopefully, these three examples allowed you to have an in-depth look at how you can start to write tests for your React apps, but that's just the tip of the iceberg! A complex app often makes use of `react-router`, `redux`, React's Context, third-party libraries (`react-select` for example). Kent C. Dodds has a complete course on that (and much more) called [Testing JavaScript](https://testingjavascript.com/) that I really recommend!
+Hopefully, these three examples allowed you to have an in-depth look at how you can start to write tests for your React apps, but that's just the tip of the iceberg! A complex app often uses `react-router`, `redux`, React's Context, third-party libraries (`react-select` for example). Kent C. Dodds has a complete course on that (and much more) called [Testing JavaScript](https://testingjavascript.com/) that I really recommend!
 
-<Comments description="How are you going to apply what you learnt on testing? Share your thoughts in the comments." />
+<Comments description="How are you going to apply what you learned on testing? Share your thoughts in the comments." />

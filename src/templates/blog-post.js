@@ -161,25 +161,22 @@ const BlogPostTemplate = ({
           <MDXRenderer>{body}</MDXRenderer>
         </main>
         {nextLink ? (
-          <>
-            <hr />
-            <Link
-              to={next.fields.slug}
-              onClick={() => track("Next article", { to: next.fields.slug })}
-            >
-              <div className="p-6 mt-4 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
-                <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
-                  <span role="img" aria-label="Eyes" className="mr-1 text-xl">
-                    👀
-                  </span>
-                  This post may also interest you
+          <Link
+            to={next.fields.slug}
+            onClick={() => track("Next article", { to: next.fields.slug })}
+          >
+            <div className="p-6 mt-4 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
+              <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
+                <span role="img" aria-label="Eyes" className="mr-1 text-xl">
+                  👀
                 </span>
-                <p className="mt-1 text-2xl font-bold leading-tight text-gray-200">
-                  {next.frontmatter.title}
-                </p>
-              </div>
-            </Link>
-          </>
+                This post may also interest you
+              </span>
+              <p className="mt-1 text-2xl font-bold leading-tight text-gray-200">
+                {next.frontmatter.title}
+              </p>
+            </div>
+          </Link>
         ) : null}
       </div>
     </Layout>

@@ -7,7 +7,9 @@ cover: "./cover.jpeg"
 tags: [html, tools]
 ---
 
-Let’s assume you want to write an items list. Well, this piece of code:
+When it comes to writing HTML code, it can get pretty tedious.
+
+Let’s assume you want to write your items list. Well, this piece of code:
 
 ```html
 <h2 class="title">My items</h2>
@@ -27,9 +29,9 @@ That’s a lot of HTML code and trust me, you don’t want to waste your time wr
 
 Luckily for us, some guys have thought about this problem and a great tool has come up. Ladies and gentlemen, let me introduce [Emmet](https://emmet.io/):
 
-Emmet is a plugin for text editors that will allow you to be way more productive when writing HTML code. Basically, you write a snippet, you press your tab key and Voilà. You just gained some time for the same result.
+Emmet is a plugin for text editors that will allow you to be way more productive when writing HTML code. Basically, you write a snippet, and you press your tab key and Voilà. You just gained some time for the same result.
 
-What if I said that the example above can be written in a single line? You don't believe me? Here's how:
+What if I said that the example above could be written in a single line? You don’t believe me? Here’s how:
 
 ```shell
 h2.title{My items}+ul.list>li.item.item--${Item $}*4
@@ -50,7 +52,7 @@ Alternatively, you can also read the whole post (isn't that nice? 😎)
 
 ## Installing Emmet
 
-- VSCode : already integrated, you have nothing to do.
+- VSCode: already integrated, you have nothing to do.
 - [Atom](https://atom.io/packages/emmet)
 - [Sublime Text](https://github.com/sergeche/emmet-sublime#readme)
 - [Brackets](https://github.com/emmetio/brackets-emmet)
@@ -59,9 +61,9 @@ Alternatively, you can also read the whole post (isn't that nice? 😎)
 
 Consider the following has your Emmet cheatsheet!
 
-### . : Create tags with classes
+### .: Create tags with classes
 
-It may be the most popular feature : the quickest way to give a class name to all your elements.
+It may be the most popular feature: the quickest way to give a class name to all your elements.
 
 ```html
 ul.list
@@ -83,11 +85,11 @@ table>.row>.col
 </table>
 ```
 
-> What is this `>` ?
+> What is this `>`?
 
-Patience, I'm going to talk about it in few seconds.
+Patience, my friend, patience. I’m going to talk about it in just a second!
 
-Let’s come back to our classes. You can give them as many classes as you want:
+Let’s come back to our classes. You can also give as many classes as you want:
 
 ```html
 h1.heading.heading--primary
@@ -97,7 +99,7 @@ h1.heading.heading--primary
 
 ### #: Create tags with IDs
 
-Same as the one above instead that this time you’re creating a element with an ID.
+Same as the one above, instead that this time you’re creating an element with an ID.
 
 ```html
 #app>.container
@@ -117,7 +119,7 @@ p.text>{Emmet is really }em{Cool}
 
 ### >: Create nested tags
 
-This one is a real time saver. Instead of formatting manually your HTML and spending time writing all your `>` and `<`, you just use `>` to nest all your tags.
+Now this one is a real time-saver. Instead of formatting your HTML manually and spending time writing all your `>` and `<`, you use `>` to nest all your tags.
 
 ```html
 ul>li
@@ -131,9 +133,11 @@ ul>li
 </div>
 ```
 
+Remember the implicit tags? Now you should more understand the example.
+
 ### +: Create sibling tags
 
-Same as `>`, you can use `+` to create sibling tags. Powerful if you want to quickly layout a page for example.
+Same as `>` , you can use `+` to create sibling tags. Powerful if you want to quickly layout a page, for example.
 
 ```html
 header+nav+main+aside+footer
@@ -147,7 +151,9 @@ header+nav+main+aside+footer
 
 ### ^: Climb up tags
 
-That one is less used. Indeed, if you go too deep in your HTML code, you may lose some time thinking of how many times you have to climb up to create other tags.
+That one is less used.
+
+If you go too deep in your HTML code, you may lose some time thinking of how many times you have to climb up to create other tags.
 
 ```html
 header>p>span^^footer
@@ -206,7 +212,7 @@ That one is a feature that I really like, especially when you want to number you
 <div class="page-4"></div>
 ```
 
-You can even precise at which number you want to start with `@``
+You can even choose which number you want to start with `@`:
 
 ```html
 ul>li.item-$@3*3
@@ -220,7 +226,7 @@ ul>li.item-$@3*3
 
 ### []: Custom attributes
 
-Emmet doesn’t stop here, you can also give custom attributes to your elements:
+Emmet doesn’t stop here. You can also give custom attributes to your elements with `[]`:
 
 ```html
 input[type=number]
@@ -228,7 +234,7 @@ input[type=number]
 <input type="number" />
 ```
 
-If you want to add more attributes to your tag, you just have to put a space between your attributes.
+If you want to add more attributes to your tag, don’t worry. Just put a space between your attributes:
 
 ```html
 img[src=logo.png alt=logo]
@@ -238,7 +244,7 @@ img[src=logo.png alt=logo]
 
 ### Useful shortcuts
 
-You’re going to use them a lot so be sure to remember them.
+You’re going to use them a lot so be sure to remember them:
 
 ```html
 html:5
@@ -267,7 +273,7 @@ script:src
 
 ### Time to practice
 
-Practice makes perfect! Here are some HTML code. Try to figure out what was the snippet. Don’t look now at the solution. Play around with Emmet. It’s the only way to really learn!
+Practice makes perfect! Here is some HTML code. Try to figure out what was the snippet. Don’t look now at the solution. Play around with Emmet. It’s the only way to really learn!
 
 #### Exercise 1
 

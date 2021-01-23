@@ -23,13 +23,9 @@ const Comments = ({ description }) => {
   return (
     <>
       {hasLoadedUtterances && (
-        <>
-          <hr className="my-4" />
-          <p className="font-semibold leading-relaxed text-gray-200">
-            {description ||
-              "Questions? Thoughts? Leave your comments below. 👇"}
-          </p>
-        </>
+        <p className="text-lg font-semibold leading-relaxed text-gray-200">
+          {description || "Questions? Thoughts? Leave your comments below. 👇"}
+        </p>
       )}
       <div ref={utterancesRef} id="comments"></div>
     </>

@@ -14,9 +14,9 @@ tags: [design]
 
 What comes first to your mind when you think about design? The first thing that pops into my head is colors. Colors are everywhere and essential for design.
 
-Working with colors seems simple. At least, until you have to design a user interface and choose your color palette. At that moment, you have the writer's block but applied for design. You try to do stuff, but nothing ever looks good. After a while, you think that, who cares, you're not one of these design magicians, you just suck at design. I've been there.
+Working with colors seems simple. At least, until you have to design a user interface and choose your color palette. At that moment, you have writer's block but applied for design. You try to do stuff, but nothing ever looks good. After a while, you think that, who cares? You're not one of these design magicians. You just suck at design. I've been there.
 
-However, it's useful to know at least the fundamentals of what makes a user interface great. And, whether you like it or not, colors are an essential component of it. Without further ado, let's take a look at how you can make use of colors in your UI and much more!
+However, it's useful to know at least the fundamentals of what makes a user interface great. And, whether you like it or not, colors are an essential component of it. Without further ado, let's look at how you can use colors in your UI and much more!
 
 ## Color formats
 
@@ -28,7 +28,7 @@ RGB and Hex are the most common formats for representing colors.
 
 RGB gives us the intensity of red, green, and blue of one color. Intensity is a number that can go from 0 to 255. As an example, you could define a light purple color with 164 of red, 43 of green, and 217 of blue:
 
-```css
+```CSS
 .color {
   color: rgb(164, 43, 217);
 }
@@ -36,23 +36,23 @@ RGB gives us the intensity of red, green, and blue of one color. Intensity is a 
 
 Hex stands for hexadecimal. It's similar to RGB, only the format changes: `#RRGGBB`.
 
-As with RGB, R is for the intensity of red, G for green, and B for blue. These values can go from 00 to FF (which means 0 to 255 if you convert it to decimal). For example, `#FF0000` represents a pure red. Indeed, `#FF` means red is at its highest intensity (255) and the others are to their lowest.
+As with RGB, R is for the intensity of red, G for green, and B for blue. These values can go from 00 to FF (which means 0 to 255 if you convert it to decimal). For example, `#FF0000` represents a pure red. Indeed, `#FF` means red is at its highest intensity (255), and the others are at their lowest.
 
 I'll say it upfront, those two formats aren't the best when you have to pick colors. Indeed, let's say you want your app to have a blue primary color. You won't have only one blue, right? You'll have to make a lighter blue or a darker blue. Well, good luck doing that with RGB and Hex!
 
 Note: RGB and Hex are not suitable for **picking** colors, but you can still use them for **representing** colors.
 
-That being said, let me introduce you to HSB, HSL and their differences. Let's begin with HSB.
+That being said, let me introduce you to HSB, HSL, and their differences. Let's begin with HSB.
 
 ### HSB
 
-HSB means hue, saturation and brightness.
+HSB means hue, saturation, and brightness.
 
 - H stand for **Hue**. It's a number measured in degrees that is between 0 and 360. The following drawing speaks for itself:
 
 ![Color wheel](./color-wheel.png)
 
-If you have a visual memory and you want to pick a color, this drawing will be your best friend.
+If you have a visual memory and want to pick a color, this drawing will be your best friend.
 
 What about saturation and brightness? For that, let's take a look at the following drawing:
 
@@ -82,7 +82,7 @@ The most perceptive of you will think that, OK, HSB is great, but you can't work
 HSL means hue, saturation and lightness. Thus, the only difference compared to HSB here is the lightness.
 
 Lightness represents how close a color is to black or white.
-0% lightness is equal to black (like the brightness), BUT, 100% lightness is equivalent to white **no matter the hue or the saturation**. This is the big difference between brightness and lightness.
+0% lightness is equal to black (like the brightness), BUT 100% lightness is equivalent to white **no matter the hue or the saturation**. This is the big difference between brightness and lightness.
 
 Let's take a value example with HSB and HSL. We'll take a hue of 250° (darker blue) and a saturation of 75% (very vibrant).
 
@@ -117,9 +117,9 @@ Here are the different values of these three circles:
 - Second circle: H=156°. I get a green that tends towards the blue.
 - Third circle: H=80°. I get a green that tends towards the yellow.
 
-Play with different colors and see what works well or not. Indeed, in design, you have to **TRY** a lot of things to determine what you really want, what is best for you.
+Play with different colors and see what works well or not. Indeed, in design, you have to **TRY** many things to determine what you really want, what is best for you.
 
-Ok. So hue allows us to modify the tone of the color, what about saturation and brightness?
+OK. So hue allows us to modify the tone of the color, what about saturation and brightness?
 
 ## Create lighter or darker colors with saturation and brightness
 
@@ -160,7 +160,7 @@ So, remember:
 
 Congratulations, you just unlocked the power of color variations! 😎
 
-You can also move the hue up or down along saturation and brightness to get lighter or darker colors. There are no magical formulas for creating color variations. The key is to adjust your values until it looks good to you. I know, _easier said than done_, but at least, you know now how to easily make a color darker or lighter. 😏
+You can also move the hue up or down along saturation and brightness to get lighter or darker colors. There are no magical formulas for creating color variations. The key is to adjust your values until it looks good to you. I know, _easier said than done_, but at least you know how to easily make a color darker or lighter. 😏
 
 ## Choosing colors
 
@@ -168,7 +168,7 @@ Don't get me wrong, as of today, I still struggle with colors. However, I learne
 
 ### Gray
 
-When you design UIs, you need to understand that **gray is essential.** Before even choosing colors, you need to design your applications only with different shades of gray.
+When you design UIs, you need to understand that **gray is essential.** Before choosing colors, you need to design your applications only with different shades of gray.
 
 Once done, you can think of colors. However, don't paint your whole app, only apply colors where that's necessary: for the navigation bar, buttons, backgrounds, maybe on some words but not everywhere! The more I look at stunning designs, the more I realize they're really subtle.
 
@@ -184,7 +184,7 @@ You can notice that the same blue is used everywhere but with different variatio
 
 Blue is a great starter color. Be careful though, it tends to be overused. We saw above that Facebook uses blue, but it's not the only one, far from it. Twitter also uses it as an example!
 
-Choose your colors according to your brand and your audience. As an example, if you're designing a bank app, you'll probably want to choose sober colors since it inspires professionalism. On the contrary, if you want to make your app playful, such as the famous Duolingo, choosing vibrant colors (saturation, remember?) will be a great choice:
+Choose your colors according to your brand and your audience. For example, if you're designing a bank app, you'll probably want to choose sober colors since it inspires professionalism. On the contrary, if you want to make your app playful, such as the famous Duolingo, choosing vibrant colors (saturation, remember?) will be a great choice:
 
 ![Duolingo UI](./duolingo.png)
 
@@ -200,7 +200,7 @@ If you’re not satisfied with a particular color, you can use gradients. Here a
 
 It's not that hard to create one. Choose a color and make the second one lighter or darker. I also find gradients to look better when the second color has a different hue. So, when creating gradients, it's fine to tune everything: hue, saturation and brightness.
 
-Here's an example of a design made by [Walid Beno on Dribbble](https://dribbble.com/shots/8660936-Birds-Guide-APP). He makes use of gradients on background and buttons. The result is stunning:
+Here's an example of a design made by [Walid Beno on Dribbble](https://dribbble.com/shots/8660936-Birds-Guide-APP). He makes use of gradients on the background and buttons. The result is stunning:
 
 ![Illustration of a UI with gradients](./gradient-bird.png)
 

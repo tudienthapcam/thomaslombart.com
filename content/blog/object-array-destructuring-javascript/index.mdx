@@ -47,7 +47,7 @@ const {
 } = user;
 ```
 
-Sometimes when you retrieve data from an API, the variable names can be quite different. Let's imagine that the `user` object has an `user_id` property, and you want to rename it just `id`. It's useful in these cases to **rename variables** while destructuring using:
+Sometimes when you retrieve data from an API, the variable names can be quite different. Imagine that the `user` object has an `user_id` property, and you want to rename it just `id`. It's useful in these cases to **rename variables** while destructuring using:
 
 ```javascript
 // Destructure user_id and rename it to id
@@ -115,7 +115,7 @@ const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest }) => {
 // <PrivateRoute path="/create" component={CreatePost} />
 ```
 
-Wait, wait, wait. The next one is even cooler. You can make use of **dynamic** destructuring by using computed property keys. Let's imagine that you have a `users` object and you want to normalize it by user ID (meaning that the key is the user ID). You can do that with destructuring:
+Wait, wait, wait. The next one is even cooler. You can make use of **dynamic** destructuring by using computed property keys. Imagine that you have a `users` object and you want to normalize it by user ID (meaning that the key is the user ID). You can do that with destructuring:
 
 ```javascript
 const users = [
@@ -162,7 +162,7 @@ You could also get the first three most active users and still store the other u
 const [first, second, third, ...otherUsers] = mostActiveUsers;
 ```
 
-Let's recap. You saw how to destructure objects (with nested objects), rename variables, assign default values, how destructuring applies to function arguments (and thus to components in React), dynamic destructuring, destructuring arrays, skipping array items and also how to use the rest parameter with both objects and arrays.
+Let's recap. You saw how to destructure objects (with nested objects), rename variables, assign default values, how destructuring applies to function arguments (and thus to components in React). You also saw dynamic destructuring, destructuring arrays, skipping array items and how to use the rest parameter with both objects and arrays.
 You're now ready to unlock the full potential of destructuring in your app! 😎
 
 <Comments description="What do you like the most about destructuring? How are you going to apply destructuring in your code? Let me know in the comments!" />

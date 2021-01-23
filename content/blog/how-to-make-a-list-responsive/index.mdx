@@ -8,7 +8,7 @@ tags: [css]
 
 Making a user interface responsive is hard. It often means struggling with media queries for many hours to get a result that is barely okay. However, new CSS technologies like CSS Grid have made this task far less tedious, especially for grids.
 
-For example, imagine you have to display a list of products for a commerce app. Your task is to make it responsive, so you decide to display three products per row for desktops, two products per row for tablets and only one product per row for mobiles.
+For example, imagine you have to display a list of products for a commerce app. Your task is to make it responsive, so you decide to display three products per row for desktops, two products per row for tablets, and only one product per row for mobiles.
 
 Let's use an example, here is a simplified HTML code:
 
@@ -26,8 +26,8 @@ Let's use an example, here is a simplified HTML code:
 How would you transform that code into a fully responsive list? There are some things to think about this:
 
 - What do you have to do to make this list responsive? Should you use flexbox? Do you handle it via different media queries?
-- How do you manage the width of the items? Do you give them a fixed width (`width: 200px`) or a relative width (`width: 25%`)? If you give them a fixed width, what happens if there are remaining spaces (the container is `800px` and the three items `250px` for example)?
-- How do you manage the gutter of your grid? Do you set a `margin` for all elements? If yes, how do you handle the last and first elements margins?
+- How do you manage the width of the items? Do you give them a fixed width (`width: 200px`) or a relative width (`width: 25%`)? If you give them a fixed width, what happens if there are remaining spaces (the container is `800px` and the three items `250px`, for example)?
+- How do you manage the gutter of your grid? Do you set a `margin` for all elements? If yes, how do you handle the last and first element's margins?
 
 As always in CSS, you could do this task in different ways. But one solution stands out. This solution is called CSS Grid and it solves all these problems very easily:
 
@@ -51,10 +51,10 @@ Let's break down `repeat(auto-fit, minmax(200px, 1fr))` in three parts:
 
 - `repeat()`: this function takes two arguments, the number of columns you want to defines and the width. For example, `repeat(5, 200px)` defines 5 columns of 200px.
 - `auto-fit`: this tells your grid container to create as many columns as possible without overflowing the container. Note that you can also use `auto-fill` instead of `auto-fit`. You can learn the differences between them [by reading this excellent article](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/).
-- `minmax(200px, 1fr)`: this function takes two arguments, a minimum and a maximum (what a surprise!). Here it means, the function will create columns with a minimum of `200px` and a maximum of `1fr`. A `fr` is a fractional unit that takes one part of the available space.
+- `minmax(200px, 1fr)`: this function takes two arguments, a minimum and a maximum (what a surprise!). Here it means, the function will create columns with a minimum of `200px` and a maximum of `1fr`. An `fr` is a fractional unit that takes one part of the available space.
 
 Finally, you have `grid-gap: 10px`. It allows you to specify the spacing between the columns and the rows. Here, there will be `10px` between each grid cell.
 
-To sum up, these three magic lines makes a list fully responsive by activating CSS Grid. It tells the grid to make sure the items will have a minimum of `200px` each. But if the grid can’t fit them all on one column, it should create as many columns and rows as needed without overflowing the grid container. On top of that, the items should always fill equally all the available space and have `10px` of space between them.
+To sum up, these three magic lines make a list fully responsive by activating CSS Grid. It tells the grid to make sure the items will have a minimum of `200px` each. But if the grid can’t fit them all on one column, it should create as many columns and rows as needed without overflowing the grid container. On top of that, the items should always fill equally all the available space and have `10px` of space between them.
 
 <Comments />
