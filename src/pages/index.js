@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { animated } from "react-spring";
 
 import Header from "../components/header";
@@ -59,8 +59,6 @@ const Home = ({
     allMdx,
   },
 }) => {
-  const track = useTrackGoal();
-
   const articles = allMdx.edges.slice(0, 4);
 
   return (
@@ -82,7 +80,7 @@ const Home = ({
               <ExternalIcon to="https://github.com/thomlom" label="GitHub">
                 <svg
                   viewBox="0 0 24 24"
-                  className="text-gray-400 transition cursor-pointer fill-current w-9 h-9 hover:text-gray-300"
+                  className="w-10 h-10 text-gray-400 transition cursor-pointer fill-current hover:text-gray-300"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -95,7 +93,7 @@ const Home = ({
               >
                 <svg
                   viewBox="0 0 24 24"
-                  className="text-gray-400 transition cursor-pointer fill-current w-9 h-9 hover:text-gray-300"
+                  className="w-10 h-10 text-gray-400 transition cursor-pointer fill-current hover:text-gray-300"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -105,7 +103,7 @@ const Home = ({
               <ExternalIcon to="mailto:thomas.lombart@hey.com" label="Mail">
                 <svg
                   viewBox="0 0 24 24"
-                  className="text-gray-400 transition cursor-pointer fill-current w-9 h-9 hover:text-gray-300"
+                  className="w-10 h-10 text-gray-400 transition cursor-pointer fill-current hover:text-gray-300"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -118,16 +116,7 @@ const Home = ({
       </div>
       <main className="max-w-3xl px-4 mx-auto space-y-12 md:px-0">
         <section>
-          <div className="flex items-center justify-between">
-            <SectionHeading>Latest articles</SectionHeading>
-            <Link
-              to="/articles"
-              className="inline-block px-3 py-1 font-bold transition bg-gray-100 rounded-lg shadow-lg sm:text-lg hover:bg-gray-300"
-              onClick={() => track("See all articles")}
-            >
-              See all articles
-            </Link>
-          </div>
+          <SectionHeading>Latest articles</SectionHeading>
           <div className="grid grid-cols-1 gap-8 mt-6 sm:grid-cols-2">
             {articles.map(({ node }) => (
               <ArticlePreview key={node.fields.slug} node={node} />
@@ -147,11 +136,10 @@ const Home = ({
               <InlineLink to="https://www.backmarket.com/">
                 Back Market
               </InlineLink>
-              , a marketplace for refurbished products. I’ve also worked, in the
-              past, for Decathlon, and Mindbaz. I learned along the way how to
-              build{" "}
+              , a marketplace for refurbished products. My experience as a
+              front-end developer taught me how to build{" "}
               <TextBold>
-                accessible, performant, beautiful and well-tested
+                accessible, performant, beautiful, and well-tested
               </TextBold>{" "}
               web applications with JavaScript technologies such as{" "}
               <TextBold>React or Vue.</TextBold>
@@ -162,7 +150,7 @@ const Home = ({
               time on my hands.
             </span>
             <span>
-              Here's a list of word to get a better glimpse of who I am:
+              Here's a list of words to get a better glimpse of who I am:
               curious, simple, kind, remote work, travel, minimalist, nature,
               hiking, piano, movies scores, privacy.
             </span>
