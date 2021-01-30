@@ -9,8 +9,8 @@ import Header from "../components/header";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import useTrackGoal from "../hooks/useTrackGoal";
 import useBoop from "../hooks/useBoop";
+import useTrackGoal from "../hooks/useTrackGoal";
 
 const ShareIcon = ({ to, name, label, children }) => {
   const track = useTrackGoal();
@@ -129,16 +129,7 @@ const BlogPostTemplate = ({
             </svg>
           </ShareIcon>
         </div>
-        <div className="flex sm:flex-row sm:justify-between sm:items-center">
-          <Header />
-          <Link
-            to="/articles"
-            className="hidden px-3 py-1 font-bold transition bg-gray-100 rounded-lg shadow-lg sm:inline-block hover:bg-gray-300"
-            onClick={() => track("See all articles")}
-          >
-            All articles
-          </Link>
-        </div>
+        <Header />
         <h1 className="mt-6 text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
           {title}
         </h1>
