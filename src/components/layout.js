@@ -3,9 +3,8 @@ import { MDXProvider } from "@mdx-js/react";
 
 import articleComponents from "./articleComponents";
 import Note from "./note";
-import Comments from "./comments";
 
-const shortcodes = { Note, Comments };
+const shortcodes = { Note };
 
 const Layout = ({ children }) => {
   return (
