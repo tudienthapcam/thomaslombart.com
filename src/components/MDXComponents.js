@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import { useCopyToClipboard } from "react-use";
 
 import codeTheme from "./codeTheme";
+import Note from "./note";
 
 import useTrackGoal from "../hooks/useTrackGoal";
 
@@ -48,9 +49,9 @@ const CodeBlock = ({
         const augmentedTokens = getAumgentedTokens(tokens);
 
         return (
-          <div className="relative lg:-mx-10">
+          <div className="relative md:-mx-10">
             <pre
-              className={`rounded-lg py-6 my-2 overflow-auto border border-gray-800 shadow-lg`}
+              className={`rounded-lg py-3 md:py-6 my-2 overflow-auto border border-gray-800 shadow-lg`}
               style={style}
             >
               <button
@@ -154,4 +155,5 @@ export default {
   ),
   code: CodeBlock,
   pre: CodeBlock,
+  Note,
 };
