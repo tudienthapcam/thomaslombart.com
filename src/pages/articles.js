@@ -1,12 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useDebounce } from "react-use";
 
 import Layout from "../components/layout";
 import ArticlePreview from "../components/articlePreview";
 import SEO from "../components/seo";
-
-import useTrackGoal from "../hooks/useTrackGoal";
 
 const BlogIndex = ({
   data: {
@@ -16,19 +13,7 @@ const BlogIndex = ({
     allMdx,
   },
 }) => {
-  const track = useTrackGoal();
   const [search, setSearch] = React.useState("");
-
-  useDebounce(
-    () => {
-      if (search !== "") {
-        track("Search", { query: search });
-      }
-    },
-    2000,
-    [search]
-  );
-
   const articles = allMdx.edges;
 
   return (

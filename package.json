@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Thomas Lombart <thomas.lombart@hey.com>",
   "bugs": {
-    "url": "https://github.com/thomlom/thomlom.dev"
+    "url": "https://github.com/thomaslombart/thomlom.dev"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.21",
@@ -40,12 +40,12 @@
   "devDependencies": {
     "prettier": "^2.2.1"
   },
-  "homepage": "https://github.com/thomlom/thomlom.dev#readme",
+  "homepage": "https://github.com/thomaslombart/thomlom.dev#readme",
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thomlom/thomlom.dev.git"
+    "url": "git+https://github.com/thomaslombart/thomlom.dev.git"
   },
   "scripts": {
     "build": "gatsby build",

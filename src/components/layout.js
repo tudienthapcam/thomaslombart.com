@@ -4,11 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 
 import MDXComponents from "./MDXComponents";
 
-import useTrackGoal from "../hooks/useTrackGoal";
-
 const Layout = ({ children }) => {
-  const track = useTrackGoal();
-
   const {
     site: {
       siteMetadata: { title },
@@ -41,7 +37,6 @@ const Layout = ({ children }) => {
               <Link
                 to="/articles"
                 className="inline-block px-3 py-1 font-bold transition bg-gray-100 rounded-lg shadow-lg hover:bg-gray-300"
-                onClick={() => track("See all articles")}
               >
                 Blog
               </Link>

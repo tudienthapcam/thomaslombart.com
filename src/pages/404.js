@@ -6,12 +6,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const NotFoundPage = ({ location }) => {
-  React.useEffect(() => {
-    if (window.plausible) {
-      window.plausible("404", { props: { path: location.pathname } });
-    }
-  }, [location.pathname]);
-
   return (
     <Layout>
       <SEO title="404: Not Found" />

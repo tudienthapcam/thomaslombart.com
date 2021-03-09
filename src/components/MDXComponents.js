@@ -5,8 +5,6 @@ import { useCopyToClipboard } from "react-use";
 import codeTheme from "./codeTheme";
 import Note from "./note";
 
-import useTrackGoal from "../hooks/useTrackGoal";
-
 import { getAumgentedTokens } from "./utils";
 
 const CodeBlock = ({
@@ -16,7 +14,6 @@ const CodeBlock = ({
 }) => {
   const [isCopied, setIsCopied] = React.useState(false);
   const [, copyToClipboard] = useCopyToClipboard();
-  const track = useTrackGoal();
 
   const matches = className && className.match(/language-(?<lang>.*)/);
   const language =
@@ -26,15 +23,13 @@ const CodeBlock = ({
     if (isCopied) {
       copyToClipboard(code);
 
-      track("Copy code", { language });
-
       const timer = setTimeout(() => {
         setIsCopied(false);
       }, 3500);
 
       return () => clearTimeout(timer);
     }
-  }, [isCopied, code, copyToClipboard, language, track]);
+  }, [isCopied, code, copyToClipboard, language]);
 
   const copy = () => setIsCopied(true);
 

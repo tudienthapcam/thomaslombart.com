@@ -6,8 +6,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import useTrackGoal from "../hooks/useTrackGoal";
-
 const BlogPostTemplate = ({
   location,
   pageContext: { next },
@@ -18,8 +16,6 @@ const BlogPostTemplate = ({
     },
   },
 }) => {
-  const track = useTrackGoal();
-
   const { body } = post;
   const {
     cover,
@@ -84,10 +80,7 @@ const BlogPostTemplate = ({
         </a>
       </div>
       {nextLink ? (
-        <Link
-          to={next.fields.slug}
-          onClick={() => track("Next article", { to: next.fields.slug })}
-        >
+        <Link to={next.fields.slug}>
           <div className="p-6 mt-6 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
             <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
               <span role="img" aria-label="Eyes" className="mr-1 text-xl">

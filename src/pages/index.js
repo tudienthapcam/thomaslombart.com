@@ -7,10 +7,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import useBoop from "../hooks/useBoop";
-import useTrackGoal from "../hooks/useTrackGoal";
 
 const ExternalIcon = ({ to, label, children }) => {
-  const track = useTrackGoal();
   const [style, trigger] = useBoop({
     scale: 1.15,
   });
@@ -21,7 +19,6 @@ const ExternalIcon = ({ to, label, children }) => {
       target="_blank"
       rel="noopener noreferrer"
       onMouseEnter={trigger}
-      onClick={() => track("Social icon", { label })}
       style={style}
     >
       <span className="sr-only">{label}</span>
@@ -41,7 +38,6 @@ const Home = ({
     allMdx,
   },
 }) => {
-  const track = useTrackGoal();
   const latestArticle = allMdx.edges[0];
 
   return (
@@ -95,7 +91,6 @@ const Home = ({
         <Link
           to={latestArticle.node.fields.slug}
           className="p-2 text-xl font-medium text-gray-100 transition border-2 border-gray-200 rounded-lg hover:border-gray-400"
-          onClick={() => track("Latest article")}
         >
           Latest article &rarr;
         </Link>
