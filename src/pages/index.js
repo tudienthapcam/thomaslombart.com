@@ -58,7 +58,7 @@ const Home = ({
         </p>
 
         <div className="flex mt-4 space-x-6">
-          <ExternalIcon to="https://github.com/thomlom" label="GitHub">
+          <ExternalIcon to="https://github.com/thomaslombart" label="GitHub">
             <svg
               viewBox="0 0 24 24"
               className="text-gray-400 transition cursor-pointer fill-current w-9 h-9 hover:text-gray-300"
