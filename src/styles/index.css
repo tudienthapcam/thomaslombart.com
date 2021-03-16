@@ -10,4 +10,11 @@ html {
 .gatsby-code-title {
   @apply text-sm text-gray-400;
 }
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
 /* purgecss end ignore */

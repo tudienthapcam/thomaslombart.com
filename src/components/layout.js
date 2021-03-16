@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
 
   return (
     <MDXProvider components={MDXComponents}>
-      <div className="flex min-h-screen bg-gray-900">
+      <div className="flex min-h-full bg-gray-900">
         <header className="fixed z-10 w-full px-4 pt-4 bg-gray-900 md:px-0">
           <div className="mx-auto max-w-prose">
             <div className="flex flex-row items-center justify-between">
