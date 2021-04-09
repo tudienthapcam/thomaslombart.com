@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import ArticlePreview from "../components/articlePreview";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const BlogIndex = ({
   data: {
@@ -19,7 +19,7 @@ const BlogIndex = ({
   return (
     <Layout>
       <div className="flex-1 space-y-8">
-        <SEO title="All articles" description={description} />
+        <Seo title="All articles" description={description} />
         <div className="rounded-lg shadow ">
           <label className="block text-xl font-bold text-gray-100 sm:text-2xl">
             Search an article

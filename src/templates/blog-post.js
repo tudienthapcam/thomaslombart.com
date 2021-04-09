@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const BlogPostTemplate = ({
   location,
@@ -36,7 +36,7 @@ const BlogPostTemplate = ({
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={seoTitle || title}
         description={description || post.excerpt}
         coverURL={siteUrl + cover.publicURL}

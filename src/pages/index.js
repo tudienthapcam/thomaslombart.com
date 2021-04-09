@@ -4,7 +4,7 @@ import { animated } from "react-spring";
 import Image from "gatsby-image";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import useBoop from "../hooks/useBoop";
 
@@ -42,7 +42,7 @@ const Home = ({
 
   return (
     <Layout>
-      <SEO description={description} />
+      <Seo description={description} />
       <main className="flex flex-col items-center justify-center flex-1 space-y-6">
         <Image fixed={fixed} className="rounded-full" />
 

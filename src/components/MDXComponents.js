@@ -94,7 +94,7 @@ const textClassNames =
   "my-4 sm:my-5 text-gray-300 text-lg leading-relaxed font-body";
 const titleClassNames = "text-gray-200 font-bold leading-tight font-display";
 
-export default {
+const components = {
   p: (props) => <p className={textClassNames} {...props} />,
   ul: (props) => (
     <ul className={`${textClassNames} list-disc ml-6`} {...props} />
@@ -152,3 +152,5 @@ export default {
   pre: CodeBlock,
   Note,
 };
+
+export default components;

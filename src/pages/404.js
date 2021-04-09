@@ -3,12 +3,12 @@ import { Link } from "gatsby";
 
 import NotFound from "./not_found.svg";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const NotFoundPage = ({ location }) => {
   return (
     <Layout>
-      <SEO title="404: Not Found" />
+      <Seo title="404: Not Found" />
       <div className="flex flex-col items-center justify-center flex-1">
         <img src={NotFound} alt="" className="w-96 h-96" />
         <div className="flex flex-col items-center space-y-6">
