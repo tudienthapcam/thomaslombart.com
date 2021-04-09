@@ -8,9 +8,9 @@
     "url": "https://github.com/thomaslombart/thomlom.dev"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.21",
-    "@mdx-js/react": "^1.6.21",
-    "autoprefixer": "^10.1.0",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "autoprefixer": "^10.2.5",
     "gatsby": "^2.29.1",
     "gatsby-image": "^2.8.0",
     "gatsby-plugin-feed": "^2.10.0",
@@ -28,14 +28,14 @@
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-transformer-remark": "^2.13.0",
     "gatsby-transformer-sharp": "^2.9.0",
-    "postcss": "^8.2.1",
-    "prism-react-renderer": "^1.1.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "postcss": "^8.2.9",
+    "prism-react-renderer": "^1.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-spring": "^8.0.27",
-    "react-use": "^15.3.4",
-    "tailwindcss": "^2.0.2"
+    "react-spring": "^9.1.0",
+    "react-use": "^17.2.3",
+    "tailwindcss": "^2.1.1"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
