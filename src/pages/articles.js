@@ -70,7 +70,7 @@ const BlogIndex = ({
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         siteUrl
@@ -92,9 +92,7 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }

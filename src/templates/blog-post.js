@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "../components/layout";
@@ -50,9 +50,10 @@ const BlogPostTemplate = ({
       </div>
       {cover && (
         <>
-          <Img
-            fluid={cover.childImageSharp.fluid}
+          <GatsbyImage
+            image={cover.childImageSharp.gatsbyImageData}
             className="mt-4 rounded-lg"
+            alt={coverCredit ? coverCredit : ""}
           />
           {coverCredit ? (
             <p className="mt-2 text-center text-gray-300">{coverCredit}</p>
@@ -121,9 +122,7 @@ export const pageQuery = graphql`
         cover {
           publicURL
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         coverCredit

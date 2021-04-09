@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
 const ArticlePreview = ({ node: { fields, frontmatter, excerpt } }) => {
@@ -10,7 +10,11 @@ const ArticlePreview = ({ node: { fields, frontmatter, excerpt } }) => {
   return (
     <article className="flex-1 overflow-hidden transition-all duration-200 transform bg-gray-800 border-2 border-gray-800 rounded-lg hover:scale-103 hover:border-gray-300 focus-within:border-gray-300 focus-within:scale-103">
       <Link to={slug} className="outline-none">
-        <Image fluid={cover.childImageSharp.fluid} className=" max-h-48" />
+        <GatsbyImage
+          image={cover.childImageSharp.gatsbyImageData}
+          alt=""
+          className=" max-h-48"
+        />
         <div className="flex flex-col p-4">
           <div className="flex justify-between text-xs font-semibold text-gray-300 uppercase">
             <span>{tagsString}</span>

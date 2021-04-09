@@ -22,6 +22,7 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

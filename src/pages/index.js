@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { animated } from "react-spring";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -32,9 +32,7 @@ const Home = ({
     site: {
       siteMetadata: { description },
     },
-    icon: {
-      childImageSharp: { fixed },
-    },
+    icon,
     allMdx,
   },
 }) => {
@@ -44,7 +42,11 @@ const Home = ({
     <Layout>
       <Seo description={description} />
       <main className="flex flex-col items-center justify-center flex-1 space-y-6">
-        <Image fixed={fixed} className="rounded-full" />
+        <GatsbyImage
+          image={icon.childImageSharp.gatsbyImageData}
+          className="rounded-full"
+          alt=""
+        />
 
         <h2 className="text-2xl font-bold text-gray-100">Thomas Lombart</h2>
 
@@ -111,9 +113,7 @@ export const pageQuery = graphql`
     }
     icon: file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 150, height: 150, layout: FIXED)
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -131,9 +131,7 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
