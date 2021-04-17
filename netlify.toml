@@ -17,3 +17,15 @@
   from = "/reusable-and-accessible-switch-vue/"
   to = "/how-to-build-reusable-and-accessible-switch-vue/"
   status = 301
+
+[[redirects]]
+  from = "https://thomaslombart.netlify.app"
+  to = "https://thomaslombart.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thomlom.dev/*"
+  to = "https://thomaslombart.com/:splat"
+  status = 301
+  force = true
