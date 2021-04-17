@@ -51,8 +51,8 @@ const Home = ({
         <h2 className="text-2xl font-bold text-gray-100">Thomas Lombart</h2>
 
         <p className="max-w-sm text-xl font-medium text-center text-gray-200">
-          Front-end developer working remotely. Writes on web development and
-          productivity.
+          Front-end developer working remotely. Writes on ways to be more
+          productive as a developer.
         </p>
 
         <div className="flex mt-4 space-x-6">
