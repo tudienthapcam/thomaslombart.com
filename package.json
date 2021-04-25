@@ -1,11 +1,11 @@
 {
-  "name": "thomlom.dev",
+  "name": "thomaslombart.com",
   "private": true,
   "description": "Thomas Lombart's personal website",
   "version": "1.0.0",
   "author": "Thomas Lombart <thomas.lombart@hey.com>",
   "bugs": {
-    "url": "https://github.com/thomaslombart/thomlom.dev"
+    "url": "https://github.com/thomaslombart/thomaslombart.com"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -40,12 +40,12 @@
   "devDependencies": {
     "prettier": "^2.2.1"
   },
-  "homepage": "https://github.com/thomaslombart/thomlom.dev#readme",
+  "homepage": "https://github.com/thomaslombart/thomaslombart.com#readme",
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thomaslombart/thomlom.dev.git"
+    "url": "git+https://github.com/thomaslombart/thomaslombart.com.git"
   },
   "scripts": {
     "build": "gatsby build",

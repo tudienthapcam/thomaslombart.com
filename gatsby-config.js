@@ -1,10 +1,10 @@
-const siteUrl = `https://thomlom.dev`;
+const siteUrl = `https://thomaslombart.com`;
 
 module.exports = {
   siteMetadata: {
     title: `Thomas Lombart`,
-    description: `Front-end developer. Builds JavaScript apps, writes on web development, and contributes to open-source.`,
-    keywords: [`front-end`, `developer`, `javascript`, `react`, `vue`],
+    description: `Front-end developer working remotely. Writes on ways to be more productive as a developer.`,
+    keywords: [`developer`, `productivity`, `web development`, `efficiency`],
     siteUrl,
   },
   plugins: [
