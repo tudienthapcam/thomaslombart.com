@@ -127,6 +127,12 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://thomaslombart.com`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-offline`,
