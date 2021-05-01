@@ -42,7 +42,7 @@ const BlogPostTemplate = ({
       <h1 className="text-2xl font-bold leading-tight text-gray-200 sm:text-4xl">
         {title}
       </h1>
-      <div className="flex justify-between mt-4 text-sm font-semibold text-gray-300 uppercase">
+      <div className="flex justify-between mt-4 text-sm font-medium text-gray-300 uppercase">
         <span>{tagsString}</span>
         <span>{date}</span>
       </div>

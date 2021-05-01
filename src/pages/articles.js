@@ -13,42 +13,20 @@ const BlogIndex = ({
     allMdx,
   },
 }) => {
-  const [search, setSearch] = React.useState("");
   const articles = allMdx.edges;
 
   return (
     <Layout>
-      <div className="flex-1 space-y-8">
+      <div>
         <Seo title="All articles" description={description} />
-        <main className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {articles
-            .filter(
-              ({
-                node: {
-                  frontmatter: { title, tags },
-                },
-              }) => {
-                const lowercasedTitle = title.toLowerCase();
-                const lowercasedSearch = search.toLowerCase();
-                const wordsSearched = lowercasedSearch
-                  .split(/[ ,]+/)
-                  .filter(Boolean);
-
-                if (wordsSearched.length > 0) {
-                  return (
-                    lowercasedTitle.includes(lowercasedSearch) ||
-                    tags.some((tag) =>
-                      wordsSearched.some((word) => tag.includes(word))
-                    )
-                  );
-                }
-
-                return true;
-              }
-            )
-            .map(({ node }) => (
-              <ArticlePreview key={node.fields.slug} node={node} />
-            ))}
+        <h3 className="my-4 text-xl font-medium text-gray-100">
+          You'll find below all the articles I've written. There are{" "}
+          {articles.length} of them.
+        </h3>
+        <main className="grid grid-cols-1 gap-8 mt-6 sm:grid-cols-2">
+          {articles.map(({ node }) => (
+            <ArticlePreview key={node.fields.slug} node={node} />
+          ))}
         </main>
       </div>
     </Layout>

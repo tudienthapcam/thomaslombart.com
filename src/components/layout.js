@@ -23,20 +23,20 @@ const Layout = ({ children }) => {
 
   return (
     <MDXProvider components={MDXComponents}>
-      <div className="flex min-h-full bg-gray-900">
-        <header className="fixed z-10 w-full px-4 pt-4 bg-gray-900 md:px-0">
+      <div className="flex flex-col min-h-full bg-gray-900">
+        <header className="sticky top-0 z-10 w-full pt-4 bg-gray-900 ">
           <div className="mx-auto max-w-prose">
-            <div className="flex flex-row items-center justify-between">
+            <div className="flex flex-row items-baseline justify-between px-4 md:px-0">
               <Link
                 to="/"
-                className="flex items-center text-xl font-extrabold tracking-wide text-gray-200 uppercase"
+                className="flex items-center text-xl font-bold tracking-wide text-gray-200 uppercase"
               >
                 {title}
               </Link>
 
               <Link
                 to="/articles"
-                className="inline-block px-3 py-1 font-bold transition bg-gray-100 rounded-lg shadow-lg hover:bg-gray-300"
+                className="inline-block text-lg font-bold text-gray-100 hover:underline"
               >
                 Blog
               </Link>
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
           </div>
         </header>
 
-        <div className="flex flex-col flex-1 w-full px-4 pt-20 mx-auto mt-4 mb-8 md:px-0 max-w-prose ">
+        <div className="flex flex-col flex-1 w-full px-4 mx-auto mt-4 mb-8 md:px-0 max-w-prose ">
           {children}
         </div>
       </div>

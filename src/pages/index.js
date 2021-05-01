@@ -44,12 +44,15 @@ const Home = ({
         </section>
 
         <section>
-          <div className="flex items-baseline justify-between">
-            <h3 className="text-lg font-bold tracking-wide text-blue-400 uppercase">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-bold tracking-wide text-transparent uppercase bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
               Latest articles
             </h3>
 
-            <Link to="/articles" className="text-gray-100 hover:underline">
+            <Link
+              to="/articles"
+              className="font-medium text-gray-100 hover:underline"
+            >
               View all
             </Link>
           </div>
@@ -77,11 +80,11 @@ const Home = ({
         </section>
       </main>
 
-      <footer className="flex justify-center mt-8 space-x-3 text-sm font-semibold tracking-wide text-gray-300 uppercase">
+      <footer className="flex justify-center mt-8 space-x-3 text-sm font-semibold tracking-wide text-gray-100 uppercase">
         <a
           href="https://twitter.com/thomas_lombart"
           target="_blank"
-          className="hover:text-gray-100"
+          className="hover:underline"
           rel="noreferrer"
         >
           Twitter
@@ -90,14 +93,10 @@ const Home = ({
         <a
           href="https://github.com/thomaslombart"
           target="_blank"
-          className="hover:text-gray-100"
+          className="hover:underline"
           rel="noreferrer"
         >
           GitHub
-        </a>
-        <span>•</span>
-        <a href="mailto:thomas.lombart@hey.com" className="hover:text-gray-100">
-          Mail
         </a>
       </footer>
     </Layout>
