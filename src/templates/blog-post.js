@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
@@ -8,7 +8,6 @@ import Seo from "../components/seo";
 
 const BlogPostTemplate = ({
   location,
-  pageContext: { next },
   data: {
     mdx: post,
     site: {
@@ -25,7 +24,6 @@ const BlogPostTemplate = ({
     description,
     date,
     tags,
-    next: nextLink,
   } = post.frontmatter;
 
   const tagsString = tags.join(", ");
@@ -63,38 +61,14 @@ const BlogPostTemplate = ({
       <main className="mt-6">
         <MDXRenderer>{body}</MDXRenderer>
       </main>
-      <p className="text-xl text-gray-100">
-        If you found this article useful, don't hesitate to share it on Twitter.
-        I'll really appreciate it{" "}
-        <span role="img" aria-label="Smiling face">
-          ☺️
-        </span>
-      </p>
-      <div>
-        <a
-          href={twitterLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-3 py-2 mt-3 text-xl text-blue-100 transition bg-blue-600 rounded-lg shadow-xl hover:bg-blue-700"
-        >
-          Share on Twitter
-        </a>
-      </div>
-      {nextLink ? (
-        <Link to={next.fields.slug}>
-          <div className="p-6 mt-6 transition transform bg-gray-800 border-none rounded-lg shadow-lg hover:shadow-xl hover:scale-103">
-            <span className="flex items-center text-sm font-semibold tracking-wide text-gray-300 uppercase">
-              <span role="img" aria-label="Eyes" className="mr-1 text-xl">
-                👀
-              </span>
-              This post may also interest you
-            </span>
-            <p className="mt-1 text-2xl font-bold leading-tight text-gray-200">
-              {next.frontmatter.title}
-            </p>
-          </div>
-        </Link>
-      ) : null}
+      <a
+        href={twitterLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-5 py-3 mt-2 text-xl font-semibold text-gray-100 rounded-lg shadow-xl w-max bg-gradient-to-r from-blue-600 to-purple-800"
+      >
+        Share this article on Twitter
+      </a>
     </Layout>
   );
 };

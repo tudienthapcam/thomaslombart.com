@@ -41,18 +41,12 @@ const Layout = ({ children }) => {
                 Blog
               </Link>
             </div>
-            <div className="w-full h-1 mt-3 bg-gradient-to-r from-yellow-500 to-pink-700"></div>
+            <div className="w-full h-1 mt-3 rounded-full bg-gradient-to-r from-yellow-500 to-pink-700"></div>
           </div>
         </header>
 
-        <div className="flex flex-col w-full px-4 pt-20 mx-auto md:px-0 max-w-prose">
+        <div className="flex flex-col flex-1 w-full px-4 pt-20 mx-auto mt-4 mb-8 md:px-0 max-w-prose ">
           {children}
-
-          <footer className="pt-8 pb-4">
-            <p className="text-sm font-medium text-center text-gray-300 ">
-              © {new Date().getFullYear()} Thomas Lombart
-            </p>
-          </footer>
         </div>
       </div>
     </MDXProvider>

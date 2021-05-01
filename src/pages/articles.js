@@ -21,7 +21,7 @@ const BlogIndex = ({
       <div className="flex-1 space-y-8">
         <Seo title="All articles" description={description} />
         <div className="rounded-lg shadow ">
-          <label className="block text-xl font-bold text-gray-100 sm:text-2xl">
+          <label className="block text-xl font-semibold text-gray-100 sm:text-2xl">
             Search an article
             <input
               type="text"

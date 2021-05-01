@@ -44,9 +44,9 @@ const CodeBlock = ({
         const augmentedTokens = getAumgentedTokens(tokens);
 
         return (
-          <div className="relative md:-mx-10">
+          <div className="relative">
             <pre
-              className={`rounded-lg py-3 md:py-6 my-2 overflow-auto border border-gray-800 shadow-lg`}
+              className={`rounded-lg py-3 md:py-6 mt-2 mb-8 overflow-auto border border-gray-800 shadow-lg`}
               style={style}
             >
               <button
