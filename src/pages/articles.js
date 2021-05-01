@@ -20,18 +20,6 @@ const BlogIndex = ({
     <Layout>
       <div className="flex-1 space-y-8">
         <Seo title="All articles" description={description} />
-        <div className="rounded-lg shadow ">
-          <label className="block text-xl font-semibold text-gray-100 sm:text-2xl">
-            Search an article
-            <input
-              type="text"
-              className="block w-full px-4 py-3 mt-3 text-gray-100 placeholder-gray-400 bg-gray-800 border-gray-700 rounded shadow appearance-none sm:px-6 focus:ring focus:ring-gray-800 "
-              placeholder="react, productivity"
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </label>
-        </div>
-
         <main className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {articles
             .filter(
