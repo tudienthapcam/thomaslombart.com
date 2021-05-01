@@ -19,7 +19,7 @@ const BlogIndex = ({
     <Layout>
       <div>
         <Seo title="All articles" description={description} />
-        <h3 className="my-4 text-xl font-medium text-gray-100">
+        <h3 className="mb-4 text-xl font-medium text-gray-100">
           You'll find below all the articles I've written. There are{" "}
           {articles.length} of them.
         </h3>

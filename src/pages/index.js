@@ -19,7 +19,7 @@ const Home = ({
   return (
     <Layout>
       <Seo description={description} />
-      <main className="flex-1 mt-4 space-y-10 sm:space-y-12">
+      <main className="flex-1 space-y-10 sm:space-y-12">
         <section className="flex flex-col items-center sm:flex-row">
           <GatsbyImage
             image={icon.childImageSharp.gatsbyImageData}
