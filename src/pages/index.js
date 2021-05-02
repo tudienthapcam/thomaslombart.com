@@ -32,13 +32,12 @@ const Home = ({
               Hey, I'm Thomas.
             </h2>
 
-            <p className="mt-4 text-xl text-gray-200">
-              I’m a front-end developer and writer. I deep dive into topics I'm
-              interested in and I write everything I know about it. Currently,
-              I’m into{" "}
+            <p className="mt-4 text-2xl text-gray-200">
+              I’m a front-end developer. I write on ways to be more{" "}
               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-pink-600">
-                building design systems.
-              </span>
+                productive
+              </span>{" "}
+              as a developer.
             </p>
           </div>
         </section>
