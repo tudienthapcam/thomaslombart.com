@@ -1,16 +1,20 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+
+const Gradient = ({ children }) => (
+  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-pink-600">
+    {children}
+  </span>
+);
 
 const Home = ({
   data: {
     site: {
       siteMetadata: { description },
     },
-    icon,
     allMdx: { edges: articles },
   },
 }) => {
@@ -20,54 +24,43 @@ const Home = ({
     <Layout>
       <Seo description={description} />
       <main className="flex-1 space-y-10 sm:space-y-12">
-        <section className="flex flex-col items-center sm:flex-row">
-          <GatsbyImage
-            image={icon.childImageSharp.gatsbyImageData}
-            className="flex-shrink-0 rounded-full"
-            alt=""
-          />
+        <section>
+          <h2 className="text-3xl font-bold text-gray-100 sm:text-4xl">
+            Hi, I'm Thomas.
+          </h2>
 
-          <div className="mt-6 sm:ml-8 sm:mt-0">
-            <h2 className="text-3xl font-bold text-gray-100">
-              Hey, I'm Thomas.
-            </h2>
-
-            <p className="mt-4 text-2xl text-gray-200">
-              I’m a front-end developer. I write on ways to be more{" "}
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-pink-600">
-                productive
-              </span>{" "}
-              as a developer.
-            </p>
-          </div>
+          <p className="mt-6 text-2xl text-gray-200 sm:text-3xl">
+            I’m a front-end developer. I write on{" "}
+            <Gradient>web development</Gradient> and{" "}
+            <Gradient>productivity</Gradient> for developers.
+          </p>
         </section>
 
         <section>
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold tracking-wide text-transparent uppercase bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            <h3 className="text-lg font-bold tracking-wide text-yellow-500 uppercase">
               Latest articles
             </h3>
 
             <Link
               to="/articles"
-              className="font-medium text-gray-100 hover:underline"
+              className="px-3 py-2 font-medium text-gray-100 transition rounded-lg hover:bg-gray-800"
             >
               View all
             </Link>
           </div>
 
-          <ul className="mt-3 space-y-10 sm:mt-5">
+          <ul className="mt-5 space-y-10">
             {latestArticles.map(({ node: article }) => (
               <li key={article.fields.slug}>
-                <Link
-                  to={article.fields.slug}
-                  className="text-gray-100 hover:text-white"
-                >
-                  <h4 className="text-xl font-semibold">
+                <Link to={article.fields.slug} className="text-gray-100">
+                  <h4 className="text-xl font-semibold hover:underline">
                     {article.frontmatter.title}
                   </h4>
 
-                  <p className="mt-2">{article.frontmatter.description}</p>
+                  <p className="mt-2 text-base sm:text-lg">
+                    {article.frontmatter.description}
+                  </p>
 
                   <div className="mt-3 text-lg font-semibold">
                     Read more &rarr;
@@ -110,11 +103,6 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         description
-      }
-    }
-    icon: file(relativePath: { eq: "icon.png" }) {
-      childImageSharp {
-        gatsbyImageData(width: 150, height: 150, layout: FIXED)
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
