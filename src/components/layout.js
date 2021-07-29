@@ -35,10 +35,10 @@ const Layout = ({ children }) => {
           <div className="mx-auto max-w-prose">
             <div className="flex items-center justify-between px-4 md:px-0">
               <div className="flex items-center">
-                <div className="mr-3 bg-gray-700 rounded-full shadow">
+                <div className="p-1 mr-3 bg-gray-700 rounded-full shadow">
                   <GatsbyImage
                     image={icon.childImageSharp.gatsbyImageData}
-                    className="w-12 h-12 sm:w-14 sm:h-14"
+                    className="w-12 h-12"
                     alt=""
                   />
                 </div>
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
 
               <Link
                 to="/articles"
-                className="inline-block px-3 py-2 text-lg font-bold text-gray-100 transition rounded-lg sm:text-xl hover:bg-gray-800"
+                className="inline-block text-lg font-bold text-gray-100 sm:text-xl"
               >
                 Blog
               </Link>
