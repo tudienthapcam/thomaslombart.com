@@ -1,5 +1,6 @@
 module.exports = {
-  purge: ["./src/**/*.js"],
+  mode: "jit",
+  purge: ["./pages/**/*.js", "./components/**/*.js"],
   variants: {
     margin: ["first", "responsive"],
     extend: {

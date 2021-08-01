@@ -1,0 +1,7 @@
+html {
+  font-family: "TT Norms", sans-serif;
+}
+
+.remark-code-title {
+  @apply mt-6 text-sm text-gray-400;
+}
